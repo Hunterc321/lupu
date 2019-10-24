@@ -30,6 +30,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 18,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
           SizedBox(height: MediaQuery.of(context).size.height/20),
@@ -46,6 +47,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 18,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
           Text(
@@ -55,6 +57,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 33,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
+
                 letterSpacing: 0),
           ),
           Image.asset(
@@ -70,6 +73,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 18,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
 
@@ -95,6 +99,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 20,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
 
@@ -115,6 +120,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 20,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
 
@@ -140,6 +146,7 @@ class _TheAppState extends State<TheApp> {
                 fontSize: MediaQuery.of(context).size.height / 20,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
 
@@ -167,6 +174,7 @@ class _TheAppState extends State<TheApp> {
                 decorationColor: Color.fromRGBO(17, 29, 74, 5),
                 decorationStyle: TextDecorationStyle.solid,
                 fontWeight: FontWeight.bold,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
           SizedBox(height: MediaQuery.of(context).size.height/36),
@@ -180,6 +188,7 @@ class _TheAppState extends State<TheApp> {
                   fontWeight: FontWeight.normal,
                   fontStyle: FontStyle.normal,
                   wordSpacing: 0,
+                  fontFamily: "Roboto",
                   letterSpacing: 0),
             ),
           ),
@@ -194,6 +203,7 @@ class _TheAppState extends State<TheApp> {
                 decoration: TextDecoration.underline,
                 decorationColor: Color.fromRGBO(17, 29, 74, 5),
                 decorationStyle: TextDecorationStyle.solid,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
           SizedBox(height: MediaQuery.of(context).size.height/36),
@@ -208,6 +218,7 @@ class _TheAppState extends State<TheApp> {
                   fontWeight: FontWeight.normal,
                   fontStyle: FontStyle.normal,
                   wordSpacing: 0,
+                  fontFamily: "Roboto",
                   letterSpacing: 0),
             ),
           ),
@@ -222,6 +233,7 @@ class _TheAppState extends State<TheApp> {
                 decoration: TextDecoration.underline,
                 decorationColor: Color.fromRGBO(17, 29, 74, 5),
                 decorationStyle: TextDecorationStyle.solid,
+                fontFamily: "Roboto",
                 letterSpacing: 0),
           ),
 
