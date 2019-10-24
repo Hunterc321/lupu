@@ -38,6 +38,7 @@ class _TheAppState extends State<TheApp> {
               height:MediaQuery.of(context).size.height/3 ,
               width:MediaQuery.of(context).size.width,
           ),
+          SizedBox(height: MediaQuery.of(context).size.height/20),
           Text(
             "Cosmin Popa",textAlign: TextAlign.center,
             style: TextStyle(
@@ -47,11 +48,40 @@ class _TheAppState extends State<TheApp> {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 0),
           ),
+          Text(
+            "Implementation & Services",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 33,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 0),
+          ),
           Image.asset(
             "asset/aboutUs/ta_cosmin.png",
             height:MediaQuery.of(context).size.height/2,
             width:MediaQuery.of(context).size.width,
-          )
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height/20),
+          Text(
+            "Andrei Lupascu",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 18,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0),
+          ),
+
+          Text(
+            "Implementation & Services",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 33,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 0),
+          ),
 
 
 
