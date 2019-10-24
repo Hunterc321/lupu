@@ -82,6 +82,54 @@ class _TheAppState extends State<TheApp> {
                 fontWeight: FontWeight.normal,
                 letterSpacing: 0),
           ),
+          Image.asset(
+            "asset/aboutUs/ta_lupascu.png",
+            height:MediaQuery.of(context).size.height/2,
+            width:MediaQuery.of(context).size.width,
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height/20),
+          Text(
+            "Laura Ilinca Nica",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 20,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0),
+          ),
+
+          Text(
+            "Project coordinator",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 33,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 0),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height/20),
+          Text(
+            "Stefana Popa",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 20,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0),
+          ),
+
+          Text(
+            "User Interface & Design",textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(17, 29, 74, 5),
+                fontSize: MediaQuery.of(context).size.height / 33,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.normal,
+                letterSpacing: 0),
+          ),
+
+
+
 
 
 
