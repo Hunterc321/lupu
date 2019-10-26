@@ -34,6 +34,7 @@ class _CommittessState extends State<Committess> {
                       fontSize: MediaQuery.of(context).size.height / 16,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
                       letterSpacing: 0),
                 ),
                 Row(

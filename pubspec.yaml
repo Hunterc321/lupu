@@ -54,6 +54,7 @@ flutter:
     - asset/commitOnTap/
     - asset/commitIcons/commitPopup/
     - asset/aboutUs/
+    - asset/theCity/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
