@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_lupu2/committees.dart';
 import 'package:flutter_lupu2/aboutUs.dart';
 import 'package:flutter_lupu2/rulesOfProcedures.dart';
@@ -50,16 +49,28 @@ class _CharUnhrcState extends State<CharUnhrc> {
           ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height / 70),
-        Image.asset(
-          "asset/chairpersons/char_unhrc2.png",
-          fit: BoxFit.fill,
-          height: MediaQuery.of(context).size.height / 5,
+        GestureDetector(
+          onTap:() {
+    Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => CharUnhrc2()));
+    },
+          child: Image.asset(
+            "asset/chairpersons/char_unhrc2.png",
+            fit: BoxFit.fill,
+            height: MediaQuery.of(context).size.height / 5,
+          ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height / 70),
-        Image.asset(
-          "asset/chairpersons/char_unhrc3.png",
-          fit: BoxFit.fill,
-          height: MediaQuery.of(context).size.height / 5,
+        GestureDetector(
+          onTap: () {
+    Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => CharUnhrc3()));
+    },
+          child: Image.asset(
+            "asset/chairpersons/char_unhrc3.png",
+            fit: BoxFit.fill,
+            height: MediaQuery.of(context).size.height / 5,
+          ),
         ),
 
 

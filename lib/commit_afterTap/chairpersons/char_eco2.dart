@@ -5,31 +5,14 @@ import 'package:flutter_lupu2/rulesOfProcedures.dart';
 import 'package:flutter_lupu2/theCity.dart';
 import 'package:flutter_lupu2/main.dart';
 import 'package:flutter_lupu2/home.dart';
-import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
-import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-class CharUnhrc1 extends StatefulWidget {
+class CharEco2 extends StatefulWidget {
   @override
-  _CharUnhrc1State createState() => _CharUnhrc1State();
+  _CharEco2State createState() => _CharEco2State();
 }
 
-class _CharUnhrc1State extends State<CharUnhrc1> {
-  Map<String,dynamic> data;
-
-  Future<String> getData() async {
-    var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/"),
-        headers: {"Accept": "application/json"});
-    data = json.decode(response.body);
-    print(data["events"][1]["title"]);
-    return "Success!";
-  }
-
+class _CharEco2State extends State<CharEco2> {
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Stack(
         fit: StackFit.expand,
@@ -41,7 +24,6 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
                       fit: BoxFit.cover))),
           ListView(
             children: <Widget>[
-              RaisedButton(onPressed: getData,child: Text("Get DATA"),),
               Text(
                 "Bianca Samoila",
                 textAlign: TextAlign.center,
@@ -73,7 +55,6 @@ She is looking forward to the conference and will be doing her best to make it a
                     letterSpacing: 0),
               ),
             ],
-
           )
         ],
       ),

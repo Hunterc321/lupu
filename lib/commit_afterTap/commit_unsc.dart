@@ -7,6 +7,7 @@ import 'package:flutter_lupu2/main.dart';
 import 'package:flutter_lupu2/home.dart';
 import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
+import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unsc.dart';
 
 class Unsc extends StatefulWidget {
   @override
@@ -101,15 +102,21 @@ class _UnscState extends State<Unsc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 1.9),
-                    child: Text(
-                      "Chairpersons",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CharUnsc()));
+                      },
+                      child: Text(
+                        "Chairpersons",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                 ],
