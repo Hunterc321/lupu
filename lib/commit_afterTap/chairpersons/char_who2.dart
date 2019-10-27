@@ -26,7 +26,7 @@ class _CharWho2State extends State<CharWho2> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Ioana CelMare",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -38,14 +38,16 @@ class _CharWho2State extends State<CharWho2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_who2ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''“Great things never came from comfort zones”. This is a motto that Ioana stands by. 
+With two previous IașiMUN experiences as a delegate, Ioana is thrilled to change things up and undertake the responsibility of a Chairperson.
+Due to the involvement in different volunteering activities, she developed great communicational, organizational and leadership skills.
+Ioana is confident that with the right encouragement, the delegates will engage in lively and inspiring debates, regarding current worldwide issues.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

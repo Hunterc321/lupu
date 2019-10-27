@@ -25,7 +25,7 @@ class _CharEco2State extends State<CharEco2> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Nicola Chiriac",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -37,14 +37,13 @@ class _CharEco2State extends State<CharEco2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_eco2ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''After attending seven conferences, with two delegate experiences in the Economic and Social Council and a chairing one in the ECOFIN Committee, you would think Nicola would want to escape the intricate world that is economy. However, after many struggles, cups of coffee and sleepless nights, she is now, more than ever, prepared to make her delegates fall in love with the mind-blowing and endless debates on economy, society and with MUNs as a whole, as she can say from the bottom of her heart that every MUN that she took part in changed her life in more ways than she could ever imagine.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

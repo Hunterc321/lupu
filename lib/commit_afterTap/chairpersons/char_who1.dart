@@ -26,7 +26,7 @@ class _CharWho1State extends State<CharWho1> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Ioana Tamaciuc",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -38,14 +38,13 @@ class _CharWho1State extends State<CharWho1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_who1ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''Ioana is a proactive individual, whose strong personality never ceases to impress. Yet she has to admit that IasiMUN has played an essential role in shaping her well-rounded character and she is utterly grateful for that. Having had an inspiring experience as a Deputy Chairperson last year, Ioana has signed up for even more responsibility, since she is fond of a challenge at any time. Thus, she is now more than honoured to be both a Chairperson in the WHO Committee and the Deputy Secretary-General of IasiMUN 2019, hence she wishes to exceed all expectations. That being said, Ioana is eager to see you all at the Opening Ceremony, as proud delegates, to whom she promises that they will never regret having applied at IasiMUN.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

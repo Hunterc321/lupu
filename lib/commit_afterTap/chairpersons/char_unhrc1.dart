@@ -23,7 +23,7 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
     var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/"),
         headers: {"Accept": "application/json"});
     data = json.decode(response.body);
-    print(data["events"][1]["title"]);
+    print(data["topics"][0]["resolutions"][0]["passed"]);
     return "Success!";
   }
 

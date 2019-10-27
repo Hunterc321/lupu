@@ -63,7 +63,7 @@ class _CharSpecState extends State<CharSpec> {
                   MaterialPageRoute(builder: (context) => CharSpec3()));
             },
             child: Image.asset(
-              "asset/chairpersons/char_unhrc3.png",
+              "asset/chairpersons/char_spec3.png",
               fit: BoxFit.fill,
               height: MediaQuery.of(context).size.height / 5,
             ),

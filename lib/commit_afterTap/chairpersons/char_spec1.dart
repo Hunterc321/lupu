@@ -26,7 +26,7 @@ class _CharSpec1State extends State<CharSpec1> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Andrei Loghin",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -38,14 +38,14 @@ class _CharSpec1State extends State<CharSpec1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_spec1ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''Fuelled by his passion for MUNs and the need to be the leader, Andrei has again assumed the role of a Chairperson in the 11th Edition of IașiMUN, and quite possibly the Conference which will end his MUN career. Taking this into account, he decided it was time for a Grand Finale, one to go down in history books: it was time to be the Secretary-General. He knew well enough it was high time for a fresh start in IașiMUN. So, he assembled a team of people he knew he could trust with his life, presented to them his ideas and goals for this year and, well, Big Things Will Happen.
+He expects this year to be the best one IașiMUN has ever had thus far, given by the addition of the Security Council, the new Rules of Procedure and the topics which we have carefully picked for delegates from all over the country.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

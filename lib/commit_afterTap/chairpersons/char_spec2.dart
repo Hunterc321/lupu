@@ -25,7 +25,7 @@ class _CharSpec2State extends State<CharSpec2> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Alexandra Frunza",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -37,14 +37,13 @@ class _CharSpec2State extends State<CharSpec2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_spec2ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''An experienced MUNer and fierce debater, Alexandra is making a comeback in IasiMUN's 2019 SPECPOL committee. But political talk is not the only expectations she has from her delegates, as to her the so-called MUN tea is just as important as holding up a country's stance. Alexandra also feels absolutely rhapsodic at the thought of working with her grandiloquent colleague, Stefana.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

@@ -25,7 +25,7 @@ class _CharCris3State extends State<CharCris3> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Radu Ungureanu",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -37,14 +37,13 @@ class _CharCris3State extends State<CharCris3> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_cris3ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''When he first heard about IasiMUN, Radu wasn’t too excited about it. Obviously, that changed once he participated in the conference for the first time and now he is following in his brother’s footsteps, as both a delegate and a chairperson, given that they are even co-chairing the same committee. In regards to this year’s conference, Radu’s goals are to learn more about what it means to be a chairperson from his more experienced colleagues and to inspire his delegates to be more confident and have as much fun as possible.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

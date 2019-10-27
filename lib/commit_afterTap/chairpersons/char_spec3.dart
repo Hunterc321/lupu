@@ -26,7 +26,7 @@ class _CharSpec3State extends State<CharSpec3> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Matei Pascariu",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -38,14 +38,14 @@ class _CharSpec3State extends State<CharSpec3> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_spec3ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''A fierce and determined character, Stefana, having just (officially) joined the IasiMUN family, is here for the flavour of the new formula of SPECPOL this year. Her activity as a delegate stands as proof that once she sets her mind on something, she is bound for success through perseverance. Stefana feels absolutely ecstatic about working alongside her magniloquent co-chair, Alexandra, to create the most memorable committee atmosphere yet.
+''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

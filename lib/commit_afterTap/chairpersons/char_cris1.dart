@@ -25,7 +25,7 @@ class _CharCris1State extends State<CharCris1> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Cosmin Ungureanu",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -37,14 +37,13 @@ class _CharCris1State extends State<CharCris1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_cris1ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''During his career Cosmin has been an inexperienced delegate, a decent delegate, a little over decent delegate and even though, for him, it may have seemed like the transformation happened overnight, a Deputy Chairperson, a Secretary-General and a Crisis expert with comprehensive, practical knowledge. His sole purpose this year, besides moderating his committee to the best of his abilities, is helping delegates reach their true potential because most people aren’t born “gifted” and there is plenty of room at the top of the MUN food chain. Maybe this sounds like another basic promise that is meant for compulsive readers but he thinks that his 3-year successful journey and the fact that he wasn’t anything special at the beginning prove his intentions and qualifications for the job he claims.''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

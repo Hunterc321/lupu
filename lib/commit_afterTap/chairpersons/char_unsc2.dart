@@ -26,7 +26,7 @@ class _CharUnsc2State extends State<CharUnsc2> {
           ListView(
             children: <Widget>[
               Text(
-                "Bianca Samoila",
+                "Victor Rosca",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
@@ -38,14 +38,14 @@ class _CharUnsc2State extends State<CharUnsc2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Image.asset(
-                "asset/chairpersons/char_unhrc1ss.png",
+                "asset/chairpersons/char_unsc2ss.png",
                 height: MediaQuery.of(context).size.height / 2.2,
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
-She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
+                '''"The Iron Fist", as he was called by his chairpersons during one of his best conferences, Victor usually represents less democratic countries, such as North Korea, Russia and even USSR. You might be a little bit skeptical about him, but you don't have to worry. He promises not to abuse of his power this time, as a chair. Or at least he will try.
+''',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),
