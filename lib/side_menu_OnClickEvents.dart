@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_lupu2/newsPage.dart';
+import 'package:flutter_lupu2/main.dart';
 
 class ImageClickEvent extends StatefulWidget {
   @override
@@ -27,46 +29,60 @@ class ImageClickEventState extends State<ImageClickEvent> {
     backgroundColor: Colors.transparent,
     ), preferredSize: Size.fromHeight(150)) ,
           body: Column( children: <Widget>[
+
+            GestureDetector(
+                onTap:()=> Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => News())),
+                child: Container(
+
+                    child: Padding(
+                      padding:  EdgeInsets.only(left:MediaQuery.of(context).size.width/4),
+                      child: Image.asset(
+                          'asset/sideMenuNews.png',fit: BoxFit.fill,height:MediaQuery.of(context).size.height/10 ,
+                      ),
+                    ))),
+            SizedBox(height: MediaQuery.of(context).size.height / 30),
+
             GestureDetector(
                 onTap: _launchURLFaceBook,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(90.0,0,0,20),
-                  child: Container(
-                      alignment: Alignment(0, -0.8),
+                child: Container(
+
+                    child: Padding(
+                      padding:  EdgeInsets.only(left:MediaQuery.of(context).size.width/6),
                       child: Image.asset(
-                        'asset/sideMenuFacebook.png',
-                      )),
-                )),
+                        'asset/sideMenuFacebook.png',fit: BoxFit.fill
+                      ),
+                    ))),
             GestureDetector(
                 onTap:_launchURLInstagram ,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(90,0,0,20),
-                  child: Container(
+                child: Container(
 
+                    child: Padding(
+                      padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/7.5),
                       child: Image.asset(
-                        'asset/sideMenuInstagram.png',
-                      )),
-                )),
+                        'asset/sideMenuInstagram.png',fit: BoxFit.fill,
+                      ),
+                    ))),
             GestureDetector(
                 onTap: _launchURLFaceBook,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(115.0,0,0,20),
-                  child: Container(
+                child: Container(
 
+                    child: Padding(
+                      padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/4.5),
                       child: Image.asset(
-                        'asset/sideMenuWebsite.png',
-                      )),
-                )),
+                        'asset/sideMenuWebsite.png',fit: BoxFit.fill
+                      ),
+                    ))),
             GestureDetector(
                 onTap: _launchURLFaceBook,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(115.0,0,0,20),
-                  child: Container(
+                child: Container(
 
+                    child: Padding(
+                      padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/4.5),
                       child: Image.asset(
-                        'asset/sideMenuContact.png',
-                      )),
-                ))
+                        'asset/sideMenuContact.png',fit: BoxFit.fill
+                      ),
+                    )))
 
 
 

@@ -8,12 +8,13 @@ import 'package:flutter_lupu2/main.dart';
 import 'package:flutter_lupu2/home.dart';
 import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_lupu2/newsPage.dart';
 import 'package:custom_navigator/custom_navigator.dart';
 
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 
 GlobalKey globalKey = new GlobalKey(debugLabel: "btm_nav_bar");
-GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(MyApp());
 }
@@ -25,7 +26,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _currentIndex = 2;
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 
   Widget callPage(int currentIndex) {
     switch (currentIndex) {
@@ -46,6 +47,8 @@ class _MyAppState extends State<MyApp> {
       case 4:
         return AboutUs();
         break;
+      case 5:
+        return ImageClickEvent();
     }
   }
 
@@ -78,6 +81,7 @@ class _MyAppState extends State<MyApp> {
             drawer: new Drawer(child: ImageClickEvent()),
             bottomNavigationBar: BottomNavigationBar(
               key: globalKey,
+
               currentIndex: _currentIndex,
               onTap: (index) {
                 navigatorKey.currentState.maybePop();
