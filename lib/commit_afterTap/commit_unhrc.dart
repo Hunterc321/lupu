@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_lupu2/committees.dart';
 import 'package:flutter_lupu2/aboutUs.dart';
 import 'package:flutter_lupu2/rulesOfProcedures.dart';
@@ -8,7 +7,7 @@ import 'package:flutter_lupu2/main.dart';
 import 'package:flutter_lupu2/home.dart';
 import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unhrc.dart';
-
+import 'package:flutter_lupu2/commit_afterTap/topics/topics_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 
 class Unhrc extends StatefulWidget {
@@ -75,15 +74,22 @@ class _UnhrcState extends State<Unhrc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 10),
-                    child: Text(
-                      "Topics",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap:() {
+    Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => TopUnhrc()));
+    },
+
+                      child: Text(
+                        "Topics",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 100),

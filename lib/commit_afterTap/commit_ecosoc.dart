@@ -8,6 +8,8 @@ import 'package:flutter_lupu2/home.dart';
 import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_eco.dart';
+import 'package:flutter_lupu2/commit_afterTap/topics/topics_ecosoc.dart';
+
 
 class Ecosoc extends StatefulWidget {
   @override
@@ -72,15 +74,21 @@ class _EcosocState extends State<Ecosoc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 6),
-                    child: Text(
-                      "Topics",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+    Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => TopEco()));
+    },
+                      child: Text(
+                        "Topics",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
