@@ -18,11 +18,11 @@ class _CharSpecState extends State<CharSpec> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Column(children: <Widget>[
+        home: ListView(children: <Widget>[
 
           SizedBox(height: MediaQuery.of(context).size.height/20,),
           Text(
-            "SPECPOL",
+            "SPECPOL",textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.white,
                 fontSize: MediaQuery.of(context).size.height / 18,

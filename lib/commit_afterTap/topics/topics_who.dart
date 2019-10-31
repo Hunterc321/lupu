@@ -10,6 +10,7 @@ import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_who1.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_who2.dart';
+import 'package:flutter_lupu2/commit_afterTap/topics/resolution/res_who.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/resolution/res_who.dart';
 
@@ -42,10 +43,16 @@ class _TopCrisisState extends State<TopCrisis> {
               ),
               Padding(
                 padding: EdgeInsets.all(MediaQuery.of(context).size.width/10),
-                child: Image.asset(
-                  "asset/topics/res_who.png",
-                  height: MediaQuery.of(context).size.height / 7,
-                  width: MediaQuery.of(context).size.width / 2,fit: BoxFit.fill,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) =>ResWho()));
+                  },
+                  child: Image.asset(
+                    "asset/topics/res_who.png",
+                    height: MediaQuery.of(context).size.height / 7,
+                    width: MediaQuery.of(context).size.width / 2,fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Padding(

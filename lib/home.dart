@@ -23,42 +23,57 @@ class _HomeState extends State<Home> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
             children: <Widget>[
               GestureDetector(
                   onTap: () {
                     BottomNavigationBar bottomNavBar = globalKey.currentWidget;
                     bottomNavBar.onTap(0);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => TheCity()));
                   },
-                  child: Image.asset("asset/mainMenuImages/main_theCity.png",
-                      height: 200)),
+                  child: Padding(
+                    padding:  EdgeInsets.only(right:MediaQuery.of(context).size.width/40),
+                    child: Image.asset("asset/mainMenuImages/main_theCity.png",
+                        height: MediaQuery.of(context).size.height/3.5,fit: BoxFit.fill),
+                  )),
               GestureDetector(
                   onTap: () {
                     BottomNavigationBar bottomNavBar = globalKey.currentWidget;
                     bottomNavBar.onTap(1);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Committess()));
                   },
                   child: Image.asset("asset/mainMenuImages/main_commit.png",
-                      height: 200))
+                      height: MediaQuery.of(context).size.height/3.5,fit: BoxFit.fill))
             ],
           ),
+          SizedBox(height: MediaQuery.of(context).size.height/100,),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
             children: <Widget>[
               GestureDetector(
                   onTap: () {
                     BottomNavigationBar bottomNavBar = globalKey.currentWidget;
                     bottomNavBar.onTap(3);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => RulesOfProcedures()));
                   },
-                  child: Image.asset(
-                      "asset/mainMenuImages/main_rulesOfProcedures.png",
-                      height: 200)),
+                  child: Padding(
+                    padding:  EdgeInsets.only(right:MediaQuery.of(context).size.width/40),
+                    child: Image.asset(
+                        "asset/mainMenuImages/main_rulesOfProcedures.png",
+                        height: MediaQuery.of(context).size.height/3.5,fit: BoxFit.fill),
+                  )),
               GestureDetector(
                   onTap: () {
                     BottomNavigationBar bottomNavBar = globalKey.currentWidget;
                     bottomNavBar.onTap(4);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => AboutUs()));
                   },
                   child: Image.asset("asset/mainMenuImages/main_aboutUs.png",
-                      height: 200))
+                      height: MediaQuery.of(context).size.height/3.5,fit: BoxFit.fill,))
             ],
           )
         ],

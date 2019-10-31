@@ -40,19 +40,16 @@ class _CommittessState extends State<Committess> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Hero(
-                      tag: "Hero",
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Unhrc()));
-                        },
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 4.5,
-                          child: Image.asset(
-                            "asset/commitIcons/image0.png",
-                            fit: BoxFit.fill,
-                          ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Unhrc()));
+                      },
+                      child: Container(
+                        height: MediaQuery.of(context).size.height / 4.5,
+                        child: Image.asset(
+                          "asset/commitIcons/image0.png",
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),

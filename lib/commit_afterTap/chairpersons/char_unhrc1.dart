@@ -41,7 +41,7 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
                       fit: BoxFit.cover))),
           ListView(
             children: <Widget>[
-              RaisedButton(onPressed: getData,child: Text("Get DATA"),),
+
               Text(
                 "Bianca Samoila",
                 textAlign: TextAlign.center,
@@ -50,7 +50,7 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "Montserrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -69,7 +69,7 @@ She is looking forward to the conference and will be doing her best to make it a
                     fontSize: MediaQuery.of(context).size.height / 45,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "Montserrat",
                     letterSpacing: 0),
               ),
             ],

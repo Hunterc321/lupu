@@ -25,6 +25,7 @@ class _ResUnhrcState extends State<ResUnhrc> {
     var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/"),
         headers: {"Accept": "application/json"});
     data = json.decode(response.body);
+
     //print();
     return data["topics"][0]["resolutions"][0]["passed"].toString();
   }
@@ -107,7 +108,7 @@ class _ResUnhrcState extends State<ResUnhrc> {
                       }
                     }
                     return CircularProgressIndicator();
-                    ;
+
                   }),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               GestureDetector(
@@ -118,6 +119,8 @@ class _ResUnhrcState extends State<ResUnhrc> {
                   fit: BoxFit.fill,
                 ),
               ),
+
+
             ],
           )
         ],

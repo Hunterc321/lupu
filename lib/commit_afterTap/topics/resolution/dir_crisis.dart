@@ -9,17 +9,61 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-
-class ResWho extends StatefulWidget {
+class DirCrisis extends StatefulWidget {
   @override
-  _ResWhoState createState() => _ResWhoState();
+  _DirCrisisState createState() => _DirCrisisState();
 }
 
-class _ResWhoState extends State<ResWho> {
+class _DirCrisisState extends State<DirCrisis> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+
+          ListView(
+            children: <Widget>[
+              Text(
+                "WHO",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: MediaQuery.of(context).size.height / 18,
+                    decoration: TextDecoration.none,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Roboto",
+                    letterSpacing: 0),
+              ),
+              Padding(
+                padding: EdgeInsets.all(MediaQuery.of(context).size.width/10),
+                child: GestureDetector(
+                  onTap: _launchURLSODS,
+                  child: Image.asset(
+                    "asset/topics/SODs.png",
+                    height: MediaQuery.of(context).size.height / 7,
+                    width: MediaQuery.of(context).size.width / 2,fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+
+
+
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
 
+_launchURLSODS() async {
+  const url = "http://www.orimi.com/pdf-test.pdf";
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}

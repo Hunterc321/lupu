@@ -17,11 +17,11 @@ class _CharUnscState extends State<CharUnsc> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Column(children: <Widget>[
+        home: ListView(children: <Widget>[
 
           SizedBox(height: MediaQuery.of(context).size.height/20,),
           Text(
-            "UNSC",
+            "UNSC",textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.white,
                 fontSize: MediaQuery.of(context).size.height / 18,
