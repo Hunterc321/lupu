@@ -9,6 +9,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unsc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unsc.dart';
+import 'package:flutter_lupu2/commit_afterTap/schedules/sch_unsc.dart';
 
 class Unsc extends StatefulWidget {
   @override
@@ -50,7 +51,7 @@ class _UnscState extends State<Unsc> {
           ),
           Padding(
             padding:
-            EdgeInsets.only(top: MediaQuery.of(context).size.height / 3.3),
+                EdgeInsets.only(top: MediaQuery.of(context).size.height / 3.3),
             child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,15 +59,21 @@ class _UnscState extends State<Unsc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 1.9),
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => SchUnsc()));
+                      },
+                      child: Text(
+                        "Schedule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -75,9 +82,9 @@ class _UnscState extends State<Unsc> {
                         left: MediaQuery.of(context).size.width / 1.9),
                     child: GestureDetector(
                       onTap: () {
-    Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => TopUnsc()));
-    },
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => TopUnsc()));
+                      },
                       child: Text(
                         "Topics",
                         style: TextStyle(
@@ -130,9 +137,6 @@ class _UnscState extends State<Unsc> {
               ),
             ),
           )
-
-
-
         ],
       ),
     );

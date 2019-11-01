@@ -9,6 +9,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_cris.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/resolution/dir_crisis.dart';
+import 'package:flutter_lupu2/commit_afterTap/schedules/sch_crisis.dart';
 
 class Crisis extends StatefulWidget {
   @override
@@ -58,15 +59,21 @@ class _CrisisState extends State<Crisis> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 6),
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SchCrisis()));
+                      },
+                      child: Text(
+                        "Schedule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -74,9 +81,9 @@ class _CrisisState extends State<Crisis> {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 6),
                     child: GestureDetector(
-                      onTap:  () {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) =>DirCrisis()));
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DirCrisis()));
                       },
                       child: Text(
                         "Sets of directives",

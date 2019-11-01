@@ -9,6 +9,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_spec.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_specpol.dart';
+import 'package:flutter_lupu2/commit_afterTap/schedules/sch_specpol.dart';
 
 class Specpol extends StatefulWidget {
   @override
@@ -50,7 +51,7 @@ class _SpecpolState extends State<Specpol> {
           ),
           Padding(
             padding:
-            EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.2),
+                EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.2),
             child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,15 +59,21 @@ class _SpecpolState extends State<Specpol> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 1.9),
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => SchSpec()));
+                      },
+                      child: Text(
+                        "Schedule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -75,9 +82,9 @@ class _SpecpolState extends State<Specpol> {
                         left: MediaQuery.of(context).size.width / 1.9),
                     child: GestureDetector(
                       onTap: () {
-    Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => TopSpec()));
-    },
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => TopSpec()));
+                      },
                       child: Text(
                         "Topics",
                         style: TextStyle(
@@ -130,9 +137,6 @@ class _SpecpolState extends State<Specpol> {
               ),
             ),
           )
-
-
-
         ],
       ),
     );

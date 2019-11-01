@@ -55,7 +55,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 100),
+                        left: MediaQuery.of(context).size.width / 100),
                     child: Image.asset(
                       "asset/rulesOP/rules_definitions.png",
                       fit: BoxFit.fill,
@@ -64,7 +64,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 50),
+                        left: MediaQuery.of(context).size.width / 50),
                     child: Image.asset(
                       "asset/rulesOP/rules_conduct.png",
                       fit: BoxFit.fill,
@@ -78,7 +78,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 100),
+                        left: MediaQuery.of(context).size.width / 100),
                     child: Image.asset(
                       "asset/rulesOP/rules_points.png",
                       fit: BoxFit.fill,
@@ -87,7 +87,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 50),
+                        left: MediaQuery.of(context).size.width / 50),
                     child: Image.asset(
                       "asset/rulesOP/rules_regular.png",
                       fit: BoxFit.fill,
@@ -101,7 +101,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 100),
+                        left: MediaQuery.of(context).size.width / 100),
                     child: Image.asset(
                       "asset/rulesOP/rules_crisis.png",
                       fit: BoxFit.fill,
@@ -110,7 +110,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 50),
+                        left: MediaQuery.of(context).size.width / 50),
                     child: Image.asset(
                       "asset/rulesOP/rules_unsc.png",
                       fit: BoxFit.fill,
@@ -124,7 +124,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 100),
+                        left: MediaQuery.of(context).size.width / 100),
                     child: Image.asset(
                       "asset/rulesOP/rules_voting.png",
                       fit: BoxFit.fill,
@@ -133,7 +133,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.height / 50),
+                        left: MediaQuery.of(context).size.width / 50),
                     child: Image.asset(
                       "asset/rulesOP/rules_reso.png",
                       fit: BoxFit.fill,

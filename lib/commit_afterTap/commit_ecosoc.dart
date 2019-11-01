@@ -9,7 +9,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_eco.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_ecosoc.dart';
-
+import 'package:flutter_lupu2/commit_afterTap/schedules/sch_eco.dart';
 
 class Ecosoc extends StatefulWidget {
   @override
@@ -51,7 +51,7 @@ class _EcosocState extends State<Ecosoc> {
           ),
           Padding(
             padding:
-            EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.2),
+                EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.2),
             child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,15 +59,21 @@ class _EcosocState extends State<Ecosoc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 6),
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => SchEco()));
+                      },
+                      child: Text(
+                        "Schedule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -76,9 +82,9 @@ class _EcosocState extends State<Ecosoc> {
                         left: MediaQuery.of(context).size.width / 6),
                     child: GestureDetector(
                       onTap: () {
-    Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => TopEco()));
-    },
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => TopEco()));
+                      },
                       child: Text(
                         "Topics",
                         style: TextStyle(
@@ -112,9 +118,9 @@ class _EcosocState extends State<Ecosoc> {
                         left: MediaQuery.of(context).size.width / 6),
                     child: GestureDetector(
                       onTap: () {
-    Navigator.of(context).push(MaterialPageRoute(
-    builder: (context) => CharEco()));
-    },
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => CharEco()));
+                      },
                       child: Text(
                         "Chairpersons",
                         style: TextStyle(
@@ -131,9 +137,6 @@ class _EcosocState extends State<Ecosoc> {
               ),
             ),
           )
-
-
-
         ],
       ),
     );

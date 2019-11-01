@@ -9,6 +9,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
+import 'package:flutter_lupu2/commit_afterTap/schedules/sch_unhrc.dart';
 
 class Unhrc extends StatefulWidget {
   @override
@@ -59,15 +60,21 @@ class _UnhrcState extends State<Unhrc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 10),
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SchUnhrc()));
+                      },
+                      child: Text(
+                        "Schedule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 100),
@@ -75,11 +82,10 @@ class _UnhrcState extends State<Unhrc> {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 10),
                     child: GestureDetector(
-                      onTap:() {
-    Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => TopUnhrc()));
-    },
-
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TopUnhrc()));
+                      },
                       child: Text(
                         "Topics",
                         style: TextStyle(
@@ -112,9 +118,9 @@ class _UnhrcState extends State<Unhrc> {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 10),
                     child: GestureDetector(
-                      onTap:() {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => CharUnhrc()));
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CharUnhrc()));
                       },
                       child: Text(
                         "Chairpersons",

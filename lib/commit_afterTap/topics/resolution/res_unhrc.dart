@@ -12,41 +12,26 @@ import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
+
 
 class ResUnhrc extends StatefulWidget {
   @override
   _ResUnhrcState createState() => _ResUnhrcState();
 }
-
+Map<String, dynamic> data;
 class _ResUnhrcState extends State<ResUnhrc> {
-  Map<String, dynamic> data;
+
 
   Future<String> getData() async {
     var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/"),
         headers: {"Accept": "application/json"});
     data = json.decode(response.body);
 
-    //print();
+    print(data["topics"][0]["resolutions"][0]["passed"]);
     return data["topics"][0]["resolutions"][0]["passed"].toString();
-  }
+}
 
-  Widget _buildRes() {
-    if (data["topics"][0]["resolutions"][0]["passed"] == "true") {
-      return Image.asset(
-        "asset/topics/res1Apas.png",
-        height: MediaQuery.of(context).size.height / 6,
-        width: MediaQuery.of(context).size.width / 1.2,
-        fit: BoxFit.fill,
-      );
-    } else {
-      return Image.asset(
-        "asset/topics/res1Anot.png",
-        height: MediaQuery.of(context).size.height / 6,
-        width: MediaQuery.of(context).size.width / 1.2,
-        fit: BoxFit.fill,
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +41,7 @@ class _ResUnhrcState extends State<ResUnhrc> {
         children: <Widget>[
           ListView(
             children: <Widget>[
+              RaisedButton(onPressed: getData,child: Text("sal"),),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 100,
               ),
@@ -79,17 +65,20 @@ class _ResUnhrcState extends State<ResUnhrc> {
                   builder: (context, snapshot) {
                     if(snapshot.hasData) {
                       if (snapshot.data == "true") {
-                        return Image.asset(
-                          "asset/topics/res1Apas.png",
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .height / 6,
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL,
+                          child: Image.asset(
+                            "asset/topics/res1Apas.png",
+                            height: MediaQuery
+                                .of(context)
+                                .size
+                                .height / 6,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                       else {
@@ -126,5 +115,14 @@ class _ResUnhrcState extends State<ResUnhrc> {
         ],
       ),
     );
+  }
+}
+
+_launchURL() async {
+  var url = data["topics"][0]["resolutions"][0]["linkToResource"].toString();
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
