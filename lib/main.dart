@@ -55,6 +55,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+
         home: Stack(
       fit: StackFit.expand,
       children: <Widget>[
@@ -84,7 +85,7 @@ class _MyAppState extends State<MyApp> {
 
               currentIndex: _currentIndex,
               onTap: (index) {
-                navigatorKey.currentState.maybePop();
+                navigatorKey.currentState.popUntil((Route<dynamic> route) => route.isFirst);
                 setState(() {
                   _currentIndex = index;
                 });
