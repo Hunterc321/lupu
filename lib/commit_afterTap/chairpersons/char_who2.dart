@@ -43,19 +43,22 @@ class _CharWho2State extends State<CharWho2> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''“Great things never came from comfort zones”. This is a motto that Ioana stands by. 
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''“Great things never came from comfort zones”. This is a motto that Ioana stands by. 
 With two previous IașiMUN experiences as a delegate, Ioana is thrilled to change things up and undertake the responsibility of a Chairperson.
 Due to the involvement in different volunteering activities, she developed great communicational, organizational and leadership skills.
 Ioana is confident that with the right encouragement, the delegates will engage in lively and inspiring debates, regarding current worldwide issues.''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

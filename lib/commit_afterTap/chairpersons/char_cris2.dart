@@ -43,18 +43,21 @@ class _CharCris2State extends State<CharCris2> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''Taking into consideration that Ştefan loved debating, politics and the Russian Federation since he was a little kid, it was only natural for him to get involved in MUN conferences. 6 MUNs later, one as Deputy Secretary-General, he is just as excited as he was at his first one. 
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''Taking into consideration that Ştefan loved debating, politics and the Russian Federation since he was a little kid, it was only natural for him to get involved in MUN conferences. 6 MUNs later, one as Deputy Secretary-General, he is just as excited as he was at his first one. 
 Future Crisis delegates, brace yourselves as he is brainstorming almost every night for both epic and extremely challenging crises.
 ''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

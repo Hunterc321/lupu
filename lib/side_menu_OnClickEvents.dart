@@ -64,7 +64,7 @@ class ImageClickEventState extends State<ImageClickEvent> {
                       ),
                     ))),
             GestureDetector(
-                onTap: _launchURLFaceBook,
+                onTap: _launchURLWebsite,
                 child: Container(
 
                     child: Padding(
@@ -74,7 +74,7 @@ class ImageClickEventState extends State<ImageClickEvent> {
                       ),
                     ))),
             GestureDetector(
-                onTap: _launchURLFaceBook,
+                onTap: _launchURLContact,
                 child: Container(
 
                     child: Padding(
@@ -94,7 +94,7 @@ class ImageClickEventState extends State<ImageClickEvent> {
 }
 
 _launchURLFaceBook() async {
-  const url = "https://facebook.com";
+  const url = "https://www.facebook.com/IasiMUN/";
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -103,7 +103,7 @@ _launchURLFaceBook() async {
 }
 
   _launchURLInstagram() async {
-    const url = "https://instagram.com";
+    const url = "https://www.instagram.com/iasimun";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -111,3 +111,21 @@ _launchURLFaceBook() async {
     }
 
   }
+_launchURLContact() async {
+  const url = "https://iasimun.ro/contact/";
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+
+}
+_launchURLWebsite() async {
+  const url = "https://iasimun.ro/";
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+
+}

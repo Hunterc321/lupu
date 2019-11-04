@@ -58,7 +58,7 @@ class _WhoState extends State<Who> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.7),
+                        left: MediaQuery.of(context).size.width / 1.45),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -79,7 +79,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.7),
+                        left: MediaQuery.of(context).size.width / 1.34),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -100,7 +100,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.7),
+                        left: MediaQuery.of(context).size.width / 1.6),
                     child: Text(
                       "Study Guide",
                       style: TextStyle(

@@ -16,7 +16,7 @@ import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 GlobalKey globalKey = new GlobalKey(debugLabel: "btm_nav_bar");
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
-  runApp(MyApp());
+  runApp(new MaterialApp(title:"sal",home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -54,6 +54,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    Navigator navigatorback;
     return new MaterialApp(
 
         home: Stack(
@@ -73,13 +74,20 @@ class _MyAppState extends State<MyApp> {
           fit: BoxFit.fitWidth,
           alignment: Alignment.topCenter,
         )))),
+
         Scaffold(
             backgroundColor: Colors.transparent,
+
             appBar: AppBar(
+              automaticallyImplyLeading: true,
+              leading: IconButton(icon:Icon(Icons.arrow_back),
+                onPressed:() => navigatorKey.currentState.maybePop()
+              ),
+
               elevation: 0.0,
               backgroundColor: Colors.transparent,
             ),
-            drawer: new Drawer(child: ImageClickEvent()),
+            endDrawer: new Drawer(child: ImageClickEvent()),
             bottomNavigationBar: BottomNavigationBar(
               key: globalKey,
 

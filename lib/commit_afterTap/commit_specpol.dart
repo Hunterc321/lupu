@@ -58,7 +58,7 @@ class _SpecpolState extends State<Specpol> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.9),
+                        left: MediaQuery.of(context).size.width / 1.6),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -79,7 +79,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.9),
+                        left: MediaQuery.of(context).size.width / 1.46),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -100,7 +100,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.9),
+                        left: MediaQuery.of(context).size.width / 1.8),
                     child: Text(
                       "Study Guide",
                       style: TextStyle(

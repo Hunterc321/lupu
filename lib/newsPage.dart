@@ -34,7 +34,7 @@ class _NewsState extends State<News> {
         Scaffold(backgroundColor: Colors.transparent,
             appBar: AppBar(automaticallyImplyLeading: true,
                 leading: IconButton(icon:Icon(Icons.arrow_back),
-                  onPressed:() => Navigator.pop(context, false),
+                  onPressed:() => Navigator.pop(context, true),
                 )
 
             ),

@@ -43,17 +43,20 @@ class _CharSpec3State extends State<CharSpec3> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''A fierce and determined character, Stefana, having just (officially) joined the IasiMUN family, is here for the flavour of the new formula of SPECPOL this year. Her activity as a delegate stands as proof that once she sets her mind on something, she is bound for success through perseverance. Stefana feels absolutely ecstatic about working alongside her magniloquent co-chair, Alexandra, to create the most memorable committee atmosphere yet.
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''A fierce and determined character, Stefana, having just (officially) joined the IasiMUN family, is here for the flavour of the new formula of SPECPOL this year. Her activity as a delegate stands as proof that once she sets her mind on something, she is bound for success through perseverance. Stefana feels absolutely ecstatic about working alongside her magniloquent co-chair, Alexandra, to create the most memorable committee atmosphere yet.
 ''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

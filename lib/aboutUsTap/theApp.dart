@@ -190,7 +190,9 @@ class _TheAppState extends State<TheApp> {
               Container(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida mi nibh, ut sagittis magna mattis eget. Duis dictum a ipsum at vehicula. In hac habitasse platea dictumst. Sed et ipsum lacinia, pellentesque orci nec, fermentum magna. Cras vel porta lectus. Praesent faucibus, erat sit amet sagittis convallis, risus mi accumsan ante, ut fringilla lectus odio sed diam. Phasellus porta gravida suscipit. Suspendisse hendrerit elit a ultricies venenatis. Morbi odio purus, ullamcorper gravida nibh et, auctor tempus lectus. Nunc consectetur gravida libero, vitae dapibus elit congue eget. In lacinia lorem risus, sit amet vulputate tortor facilisis elementum. Donec ante nisl, ornare vitae metus pulvinar, ultricies ullamcorper orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque convallis porta elementum. Nullam et malesuada purus.''',
+                  '''Debating and MUNing was something that made my high school special so that led me to think that I want to give something back to
+the MUN that changed my highschool life. It's not much but it's honest work and it's been hard but I thank the two amazing guys that helped
+me so much and especially Stefana for the emotional support and making my wattpad story dream come true.''',
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
                       fontSize: MediaQuery.of(context).size.height / 45,

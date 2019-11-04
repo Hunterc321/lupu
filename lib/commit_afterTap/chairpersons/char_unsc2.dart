@@ -43,17 +43,20 @@ class _CharUnsc2State extends State<CharUnsc2> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''"The Iron Fist", as he was called by his chairpersons during one of his best conferences, Victor usually represents less democratic countries, such as North Korea, Russia and even USSR. You might be a little bit skeptical about him, but you don't have to worry. He promises not to abuse of his power this time, as a chair. Or at least he will try.
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''"The Iron Fist", as he was called by his chairpersons during one of his best conferences, Victor usually represents less democratic countries, such as North Korea, Russia and even USSR. You might be a little bit skeptical about him, but you don't have to worry. He promises not to abuse of his power this time, as a chair. Or at least he will try.
 ''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

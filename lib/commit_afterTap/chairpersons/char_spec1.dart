@@ -43,17 +43,20 @@ class _CharSpec1State extends State<CharSpec1> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''Fuelled by his passion for MUNs and the need to be the leader, Andrei has again assumed the role of a Chairperson in the 11th Edition of IașiMUN, and quite possibly the Conference which will end his MUN career. Taking this into account, he decided it was time for a Grand Finale, one to go down in history books: it was time to be the Secretary-General. He knew well enough it was high time for a fresh start in IașiMUN. So, he assembled a team of people he knew he could trust with his life, presented to them his ideas and goals for this year and, well, Big Things Will Happen.
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''Fuelled by his passion for MUNs and the need to be the leader, Andrei has again assumed the role of a Chairperson in the 11th Edition of IașiMUN, and quite possibly the Conference which will end his MUN career. Taking this into account, he decided it was time for a Grand Finale, one to go down in history books: it was time to be the Secretary-General. He knew well enough it was high time for a fresh start in IașiMUN. So, he assembled a team of people he knew he could trust with his life, presented to them his ideas and goals for this year and, well, Big Things Will Happen.
 He expects this year to be the best one IașiMUN has ever had thus far, given by the addition of the Security Council, the new Rules of Procedure and the topics which we have carefully picked for delegates from all over the country.''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

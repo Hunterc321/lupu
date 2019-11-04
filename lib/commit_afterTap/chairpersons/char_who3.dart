@@ -43,16 +43,19 @@ class _CharWho3State extends State<CharWho3> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''Andrei is a 10th grader at the “Emil Racovită” National College. This will be his first chairing experience, and he’s stoked that he’ll do that in this year’s WHO committee. Last year’s edition was his first MUN and he is hoping to make this experience for you as great as it was for him.''',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+              Padding(
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                child: Text(
+                  '''Andrei is a 10th grader at the “Emil Racovită” National College. This will be his first chairing experience, and he’s stoked that he’ll do that in this year’s WHO committee. Last year’s edition was his first MUN and he is hoping to make this experience for you as great as it was for him.''',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Roboto",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )
