@@ -48,7 +48,7 @@ class _TheCityState extends State<TheCity> {
                           onTap: _launchURLBus,
                           child: Image.asset(
                             "asset/theCity/theCity_bus.png",
-                            height: MediaQuery.of(context).size.height / 2.8,
+                            height: MediaQuery.of(context).size.height / 3.1,
                             fit: BoxFit.fill,
                             width: MediaQuery.of(context).size.width / 2.1,
                             alignment: Alignment.topLeft,
@@ -84,7 +84,7 @@ class _TheCityState extends State<TheCity> {
                           onTap: _launchURLCity,
                           child: Image.asset(
                             "asset/theCity/theCity_city.png",
-                            height: MediaQuery.of(context).size.height / 3.5,
+                            height: MediaQuery.of(context).size.height / 4,
                             fit: BoxFit.fill,
                             width: MediaQuery.of(context).size.width / 2.3,
                             alignment: Alignment.topLeft,

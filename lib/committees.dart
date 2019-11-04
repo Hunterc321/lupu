@@ -47,6 +47,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image0.png",
                           fit: BoxFit.fill,
@@ -60,6 +61,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image1.png",
                           fit: BoxFit.fill,
@@ -78,6 +80,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image2.png",
                           fit: BoxFit.fill,
@@ -91,6 +94,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image3.png",
                           fit: BoxFit.fill,
@@ -109,6 +113,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image4.png",
                           fit: BoxFit.fill,
@@ -122,6 +127,7 @@ class _CommittessState extends State<Committess> {
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height / 4.5,
+                        width: MediaQuery.of(context).size.width / 2.4,
                         child: Image.asset(
                           "asset/commitIcons/image5.png",
                           fit: BoxFit.fill,

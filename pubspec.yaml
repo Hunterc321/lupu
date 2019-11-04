@@ -63,6 +63,14 @@ flutter:
     - asset/chairpersons/
     - asset/topics/
     - asset/rulesPDF/full.pdf
+    - asset/rulesPDF/conduct.pdf
+    - asset/rulesPDF/def.pdf
+    - asset/rulesPDF/points.pdf
+    - asset/rulesPDF/resolution.pdf
+    - asset/rulesPDF/procedure.pdf
+    - asset/rulesPDF/procedure_crisis.pdf
+    - asset/rulesPDF/unsc.pdf
+    - asset/rulesPDF/voting.pdf
 
 
 
