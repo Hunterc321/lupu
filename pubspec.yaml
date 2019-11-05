@@ -71,6 +71,7 @@ flutter:
     - asset/rulesPDF/procedure_crisis.pdf
     - asset/rulesPDF/unsc.pdf
     - asset/rulesPDF/voting.pdf
+    - asset/studyGuide/
 
 
 

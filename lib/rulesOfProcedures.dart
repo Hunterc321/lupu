@@ -1,9 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'dart:io';
 import 'dart:typed_data';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
-
 import 'package:path_provider/path_provider.dart';
 
 class RulesOfProcedures extends StatefulWidget {

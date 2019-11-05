@@ -10,6 +10,10 @@ import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unsc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unsc.dart';
 import 'package:flutter_lupu2/commit_afterTap/schedules/sch_unsc.dart';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
+import 'package:path_provider/path_provider.dart';
 
 class Unsc extends StatefulWidget {
   @override
@@ -17,6 +21,19 @@ class Unsc extends StatefulWidget {
 }
 
 class _UnscState extends State<Unsc> {
+  String _docDef = "asset/studyGuide/sgUnsc.pdf";
+  Future<String> pdfDef() async {
+    final ByteData bytes = await DefaultAssetBundle.of(context).load(_docDef);
+    final Uint8List list = bytes.buffer.asUint8List();
+
+    final tempDir = await getTemporaryDirectory();
+    final tempDocumentPath = '${tempDir.path}/$_docDef';
+
+    final file = await File(tempDocumentPath).create(recursive: true);
+    file.writeAsBytesSync(list);
+    return tempDocumentPath;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +53,7 @@ class _UnscState extends State<Unsc> {
                     "Committees",
                     style: TextStyle(
                         color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 5,
+                        fontSize: MediaQuery.of(context).size.height / 20,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0),
@@ -44,6 +61,8 @@ class _UnscState extends State<Unsc> {
                   Image.asset(
                     "asset/commitIcons/commitPopup/commit_unsc_popup.png",
                     fit: BoxFit.fill,
+                    height: MediaQuery.of(context).size.height / 1.5,
+                    width: MediaQuery.of(context).size.width / 1.2,
                   )
                 ],
               ),
@@ -101,15 +120,24 @@ class _UnscState extends State<Unsc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 1.8),
-                    child: Text(
-                      "Study Guide",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () => pdfDef().then((path) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FullPdfViewerScreen(path)),
+                        );
+                      }),
+                      child: Text(
+                        "Study Guide",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -140,5 +168,20 @@ class _UnscState extends State<Unsc> {
         ],
       ),
     );
+  }
+}
+
+class FullPdfViewerScreen extends StatelessWidget {
+  final String pdfPath;
+
+  FullPdfViewerScreen(this.pdfPath);
+
+  @override
+  Widget build(BuildContext context) {
+    return PDFViewerScaffold(
+        appBar: AppBar(
+          title: Text("Document"),
+        ),
+        path: pdfPath);
   }
 }

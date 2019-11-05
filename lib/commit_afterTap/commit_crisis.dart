@@ -36,7 +36,7 @@ class _CrisisState extends State<Crisis> {
                     "Committees",
                     style: TextStyle(
                         color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 5,
+                        fontSize: MediaQuery.of(context).size.height / 20,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0),
@@ -44,6 +44,8 @@ class _CrisisState extends State<Crisis> {
                   Image.asset(
                     "asset/commitIcons/commitPopup/commit_crisis_popup.png",
                     fit: BoxFit.fill,
+                    height: MediaQuery.of(context).size.height / 1.5,
+                    width: MediaQuery.of(context).size.width / 1.2,
                   )
                 ],
               ),

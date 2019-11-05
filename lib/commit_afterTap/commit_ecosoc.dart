@@ -10,6 +10,10 @@ import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_eco.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_ecosoc.dart';
 import 'package:flutter_lupu2/commit_afterTap/schedules/sch_eco.dart';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
+import 'package:path_provider/path_provider.dart';
 
 class Ecosoc extends StatefulWidget {
   @override
@@ -17,6 +21,19 @@ class Ecosoc extends StatefulWidget {
 }
 
 class _EcosocState extends State<Ecosoc> {
+  String _docDef = "asset/studyGuide/sgEco.pdf";
+  Future<String> pdfDef() async {
+    final ByteData bytes = await DefaultAssetBundle.of(context).load(_docDef);
+    final Uint8List list = bytes.buffer.asUint8List();
+
+    final tempDir = await getTemporaryDirectory();
+    final tempDocumentPath = '${tempDir.path}/$_docDef';
+
+    final file = await File(tempDocumentPath).create(recursive: true);
+    file.writeAsBytesSync(list);
+    return tempDocumentPath;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,25 +45,25 @@ class _EcosocState extends State<Ecosoc> {
                   image: DecorationImage(
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
-          FittedBox(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Committees",
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 5,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0),
-                  ),
-                  Image.asset(
-                    "asset/commitIcons/commitPopup/commit_ecosoc_popup.png",
-                    fit: BoxFit.fill,
-                  )
-                ],
-              ),
+          Container(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Committees",
+                  style: TextStyle(
+                      color: Color.fromRGBO(0, 119, 172, 5),
+                      fontSize: MediaQuery.of(context).size.height / 20,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0),
+                ),
+                Image.asset(
+                  "asset/commitIcons/commitPopup/commit_ecosoc_popup.png",
+                  fit: BoxFit.fill,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                )
+              ],
             ),
           ),
           Padding(
@@ -101,15 +118,24 @@ class _EcosocState extends State<Ecosoc> {
                   Padding(
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 6),
-                    child: Text(
-                      "Study Guide",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height / 30,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: "Robot",
-                          letterSpacing: 0),
+                    child: GestureDetector(
+                      onTap: () => pdfDef().then((path) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FullPdfViewerScreen(path)),
+                        );
+                      }),
+                      child: Text(
+                        "Study Guide",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.height / 30,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
@@ -140,5 +166,20 @@ class _EcosocState extends State<Ecosoc> {
         ],
       ),
     );
+  }
+}
+
+class FullPdfViewerScreen extends StatelessWidget {
+  final String pdfPath;
+
+  FullPdfViewerScreen(this.pdfPath);
+
+  @override
+  Widget build(BuildContext context) {
+    return PDFViewerScaffold(
+        appBar: AppBar(
+          title: Text("Document"),
+        ),
+        path: pdfPath);
   }
 }
