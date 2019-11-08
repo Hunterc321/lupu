@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
     super.initState();
     new Future.delayed(
         const Duration(seconds: 2),
-            () => Navigator.push(
+            () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => MyApp()),
         ));
@@ -25,7 +25,7 @@ class _SplashState extends State<Splash> {
       children: <Widget>[
         GestureDetector(
           onTap: () {
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
     MaterialPageRoute(builder: (context) =>MyApp()));
     },
 

@@ -147,7 +147,7 @@ class _TheAppState extends State<TheApp> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
-                "LEONARD HINGĂNESCU",
+                "LEONARD HINGANESCU",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(17, 29, 74, 5),

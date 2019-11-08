@@ -28,10 +28,9 @@ dependencies:
 
 
 flutter_icons:
-  image_path: "asset/icon.png"
-  android: true
+  android: "launcher_icon"
   ios: true
-
+  image_path: "asset/icon.png"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -88,6 +87,7 @@ flutter:
     - asset/rulesPDF/unsc.pdf
     - asset/rulesPDF/voting.pdf
     - asset/studyGuide/
+    - asset/icon.png
 
 
 

@@ -27,14 +27,14 @@ class _DirCrisisState extends State<DirCrisis> {
           ListView(
             children: <Widget>[
               Text(
-                "WHO",
+                "Sets Of Directives",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               Padding(
