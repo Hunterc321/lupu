@@ -50,7 +50,7 @@ class _NewsState extends State<News> {
                   fontSize: MediaQuery.of(context).size.height / 18,
                   decoration: TextDecoration.none,
                   fontWeight: FontWeight.bold,
-                  fontFamily: "Robot",
+                  fontFamily: "MontSerrat",
                   letterSpacing: 0),
             ),
             SizedBox(height: MediaQuery.of(context).size.height/40,),

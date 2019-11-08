@@ -35,7 +35,7 @@ class _TopWho2State extends State<TopWho2> {
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -45,8 +45,10 @@ class _TopWho2State extends State<TopWho2> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Text(
-                '''Good health is essential to sustain economic and social development and poverty reduction. Access to needed health services is crucial for maintaining and improving health.
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+                child: Text(
+                  '''Good health is essential to sustain economic and social development and poverty reduction. Access to needed health services is crucial for maintaining and improving health.
 Universal Health Coverage, also known as UHC, means that all individuals and communities receive the health services they need without suffering financial hardship. It includes the full spectrum of essential, quality health services, from health promotion to prevention, treatment, rehabilitation, and palliative care.
 UHC enables everyone to access the services that address the most significant causes of disease and death, and ensures that the quality of those services is good enough to improve the health of the people who receive them.
 Moving towards UHC requires strengthening health systems in all countries. When people have to pay most of the cost for health services out of their own pockets, the poor are often unable to obtain many of the services they need, and even the rich may be exposed to financial hardship in the event of severe or long-term illness.
@@ -61,13 +63,14 @@ Questions to keep in mind:
 •	What are the major impediments that prevent UHC from happening?
 •	How can it be financed?
 •	What are the main requirements for countries to achieve UHC?''',
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 45,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0),
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 45,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "MontSerrat",
+                      letterSpacing: 0),
+                ),
               ),
             ],
           )

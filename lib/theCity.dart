@@ -30,7 +30,7 @@ class _TheCityState extends State<TheCity> {
                   fontSize: MediaQuery.of(context).size.height / 18,
                   decoration: TextDecoration.none,
                   fontWeight: FontWeight.bold,
-                  fontFamily: "Roboto",
+                  fontFamily: "MontSerrat",
                   letterSpacing: 0),
             ),
           ),

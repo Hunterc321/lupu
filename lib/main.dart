@@ -10,6 +10,7 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_lupu2/newsPage.dart';
 import 'package:custom_navigator/custom_navigator.dart';
+import 'package:flutter_lupu2/splashScreen.dart';
 
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter/services.dart';
@@ -18,7 +19,7 @@ GlobalKey globalKey = new GlobalKey(debugLabel: "btm_nav_bar");
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(new MaterialApp(title:"sal",home: MyApp()));
+  runApp(new MaterialApp(title:"sal",home: Splash()));
 }
 
 class MyApp extends StatefulWidget {

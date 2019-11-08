@@ -28,7 +28,7 @@ class _CharCrisState extends State<CharCris> {
                 fontSize: MediaQuery.of(context).size.height / 18,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
-                fontFamily: "Robot",
+                fontFamily: "MontSerrat",
                 letterSpacing: 0),
           ),
           SizedBox(height: MediaQuery.of(context).size.height/60,),

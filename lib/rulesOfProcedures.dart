@@ -156,7 +156,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                     fontSize: MediaQuery.of(context).size.height / 20,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.normal,
-                    fontFamily: "Robot",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               Text(
@@ -167,7 +167,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                     fontSize: MediaQuery.of(context).size.height / 20,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.normal,
-                    fontFamily: "Robot",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 30),

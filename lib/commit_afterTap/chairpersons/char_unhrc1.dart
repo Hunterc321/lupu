@@ -50,7 +50,7 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Montserrat",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -65,13 +65,13 @@ class _CharUnhrc1State extends State<CharUnhrc1> {
                 child: Text(
                   '''With this IasiMUN being her 8th conference and the second as a chairperson, Bianca has grown a lot the past year (intellectually speaking, not so much in height though). She aspires to foster an environment of respect, cooperation and intellectual curiosity, leading to a conference full of fruitful debate. In her limited free time, Bianca finds herself in coffee shops where she can easily ease into pretending to be working. 
 She is looking forward to the conference and will be doing her best to make it a great experience for every delegate!''',
-                  textAlign: TextAlign.center,
+
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
                       fontSize: MediaQuery.of(context).size.height / 45,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Montserrat",
+                      fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),
               ),

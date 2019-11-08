@@ -67,7 +67,7 @@ class _SchoolMapState extends State<SchoolMap> {
                       fontSize: MediaQuery.of(context).size.height / 18,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Robot",
+                      fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),
                 SizedBox(

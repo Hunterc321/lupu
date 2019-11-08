@@ -32,7 +32,7 @@ class _CharSpec2State extends State<CharSpec2> {
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -46,13 +46,13 @@ class _CharSpec2State extends State<CharSpec2> {
                 padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
                 child: Text(
                   '''An experienced MUNer and fierce debater, Alexandra is making a comeback in IasiMUN's 2019 SPECPOL committee. But political talk is not the only expectations she has from her delegates, as to her the so-called MUN tea is just as important as holding up a country's stance. Alexandra also feels absolutely rhapsodic at the thought of working with her grandiloquent colleague, Stefana.''',
-                  textAlign: TextAlign.center,
+
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
                       fontSize: MediaQuery.of(context).size.height / 45,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Roboto",
+                      fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),
               ),

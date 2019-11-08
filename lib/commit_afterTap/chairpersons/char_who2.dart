@@ -33,7 +33,7 @@ class _CharWho2State extends State<CharWho2> {
                     fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.bold,
-                    fontFamily: "Roboto",
+                    fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -50,13 +50,13 @@ class _CharWho2State extends State<CharWho2> {
 With two previous IașiMUN experiences as a delegate, Ioana is thrilled to change things up and undertake the responsibility of a Chairperson.
 Due to the involvement in different volunteering activities, she developed great communicational, organizational and leadership skills.
 Ioana is confident that with the right encouragement, the delegates will engage in lively and inspiring debates, regarding current worldwide issues.''',
-                  textAlign: TextAlign.center,
+
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
                       fontSize: MediaQuery.of(context).size.height / 45,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Roboto",
+                      fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),
               ),
