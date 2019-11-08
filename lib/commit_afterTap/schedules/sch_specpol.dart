@@ -44,6 +44,7 @@ class _SchSpecState extends State<SchSpec> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width:MediaQuery.of(context).size.width ,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -100,16 +101,394 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 20),
+                      child: Text(
+                        "Event Title",
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Schedule",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Event Location",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 20),
+                      child: Text(
+                        "Event Title",
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Schedule",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Event Location",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 20),
+                      child: Text(
+                        "Event Title",
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Schedule",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Event Location",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width:MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 20),
+                      child: Text(
+                        "Event Title",
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Schedule",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Event Location",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 20),
+                      child: Text(
+                        "Event Title",
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Schedule",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: Text(
+                        "Event Location",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(17, 29, 74, 5),
+                            fontSize: MediaQuery.of(context).size.height / 40,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Robot",
+                            letterSpacing: 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -171,21 +550,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -242,371 +625,19 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
               Container(
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
-
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
                 ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
-
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
-
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
-
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
-
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Robot",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
@@ -624,6 +655,7 @@ class _SchSpecState extends State<SchSpec> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -680,21 +712,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -751,21 +787,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -822,21 +862,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -893,21 +937,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -964,21 +1012,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -1035,16 +1087,19 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1064,6 +1119,7 @@ class _SchSpecState extends State<SchSpec> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -1120,21 +1176,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -1191,21 +1251,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -1262,21 +1326,25 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
@@ -1333,16 +1401,19 @@ class _SchSpecState extends State<SchSpec> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 40,
               ),
-              Text(
-                "Description",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(17, 29, 74, 5),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    decoration: TextDecoration.none,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Robot",
-                    letterSpacing: 0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  "Description",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromRGBO(17, 29, 74, 5),
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,

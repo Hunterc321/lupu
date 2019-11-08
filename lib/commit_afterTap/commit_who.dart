@@ -45,27 +45,25 @@ class _WhoState extends State<Who> {
                   image: DecorationImage(
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
-          FittedBox(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Committees",
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 20,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0),
-                  ),
-                  Image.asset(
-                    "asset/commitIcons/commitPopup/commit_who_popup.png",
-                    fit: BoxFit.fill,
-                    height: MediaQuery.of(context).size.height / 1.5,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                  )
-                ],
-              ),
+          Container(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Committees",
+                  style: TextStyle(
+                      color: Color.fromRGBO(0, 119, 172, 5),
+                      fontSize: MediaQuery.of(context).size.height / 20,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0),
+                ),
+                Image.asset(
+                  "asset/commitIcons/commitPopup/commit_who_popup.png",
+                  fit: BoxFit.fill,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                )
+              ],
             ),
           ),
           Padding(
@@ -77,7 +75,7 @@ class _WhoState extends State<Who> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.45),
+                        left: MediaQuery.of(context).size.width / 1.6),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -98,7 +96,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.34),
+                        left: MediaQuery.of(context).size.width / 1.5),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -119,7 +117,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.6),
+                        left: MediaQuery.of(context).size.width / 1.8),
                     child: GestureDetector(
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
@@ -143,7 +141,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.7),
+                        left: MediaQuery.of(context).size.width / 1.88),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(

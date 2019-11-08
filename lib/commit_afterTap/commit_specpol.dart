@@ -46,25 +46,23 @@ class _SpecpolState extends State<Specpol> {
                   image: DecorationImage(
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
-          FittedBox(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Committees",
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 20,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0),
-                  ),
-                  Image.asset(
-                    "asset/commitIcons/commitPopup/commit_specpol_popup.png",
-                    fit: BoxFit.fill,height: MediaQuery.of(context).size.height/1.5,width: MediaQuery.of(context).size.width/1.2,
-                  )
-                ],
-              ),
+          Container(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Committees",
+                  style: TextStyle(
+                      color: Color.fromRGBO(0, 119, 172, 5),
+                      fontSize: MediaQuery.of(context).size.height / 20,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0),
+                ),
+                Image.asset(
+                  "asset/commitIcons/commitPopup/commit_specpol_popup.png",
+                  fit: BoxFit.fill,height: MediaQuery.of(context).size.height/1.5,width: MediaQuery.of(context).size.width/1.2,
+                )
+              ],
             ),
           ),
           Padding(
@@ -76,7 +74,7 @@ class _SpecpolState extends State<Specpol> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.6),
+                        left: MediaQuery.of(context).size.width / 1.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -97,7 +95,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.46),
+                        left: MediaQuery.of(context).size.width / 1.64),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -118,7 +116,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.8),
+                        left: MediaQuery.of(context).size.width / 2.1),
                     child: GestureDetector(
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
@@ -142,7 +140,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.9),
+                        left: MediaQuery.of(context).size.width / 2.2),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(

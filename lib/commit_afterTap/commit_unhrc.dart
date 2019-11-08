@@ -45,28 +45,26 @@ class _UnhrcState extends State<Unhrc> {
                   image: DecorationImage(
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
-          FittedBox(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Committees",
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 119, 172, 5),
-                        fontSize: MediaQuery.of(context).size.height / 20,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Robot",
-                        letterSpacing: 0),
-                  ),
-                  Image.asset(
-                    "asset/commitIcons/commitPopup/commit_unhrc_popup.png",
-                    fit: BoxFit.fill,
-                    height: MediaQuery.of(context).size.height / 1.5,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                  ),
-                ],
-              ),
+          Container(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Committees",
+                  style: TextStyle(
+                      color: Color.fromRGBO(0, 119, 172, 5),
+                      fontSize: MediaQuery.of(context).size.height / 20,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Robot",
+                      letterSpacing: 0),
+                ),
+                Image.asset(
+                  "asset/commitIcons/commitPopup/commit_unhrc_popup.png",
+                  fit: BoxFit.fill,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                ),
+              ],
             ),
           ),
           Padding(
