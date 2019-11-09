@@ -76,7 +76,7 @@ class _UnscState extends State<Unsc> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.8),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -97,7 +97,7 @@ class _UnscState extends State<Unsc> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.62),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -118,7 +118,7 @@ class _UnscState extends State<Unsc> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 2),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
@@ -142,7 +142,7 @@ class _UnscState extends State<Unsc> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 2.15),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(

@@ -28,6 +28,7 @@ class _SchWhoState extends State<SchWho> {
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
           ListView(
+            scrollDirection: Axis.vertical,
             children: <Widget>[
               Text(
                 "DAY 1",
@@ -43,13 +44,17 @@ class _SchWhoState extends State<SchWho> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
+
               Container(
+                height:MediaQuery.of(context).size.height/35 ,
                 width:MediaQuery.of(context).size.width ,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -119,12 +124,15 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35 ,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -194,12 +202,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -269,12 +279,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -344,12 +356,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -419,12 +433,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -494,11 +510,13 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -568,12 +586,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection:  Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -626,6 +646,7 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 40,
               ),
               Container(
+
                 width: MediaQuery.of(context).size.width,
                 child: Text(
                   "Description",
@@ -655,12 +676,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -730,12 +753,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -805,12 +830,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -880,12 +907,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -955,12 +984,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -1030,12 +1061,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -1119,12 +1152,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -1194,12 +1229,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -1269,12 +1306,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
@@ -1344,12 +1383,14 @@ class _SchWhoState extends State<SchWho> {
                 height: MediaQuery.of(context).size.height / 20,
               ),
               Container(
+                height:MediaQuery.of(context).size.height/35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border(bottom:BorderSide(color:Colors.black))
 
                 ),
-                child: Row(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(

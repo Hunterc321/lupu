@@ -37,7 +37,7 @@ class _SpecpolState extends State<Specpol> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(theme: ThemeData(fontFamily: "MontSerrat"),
       home: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -75,7 +75,7 @@ class _SpecpolState extends State<Specpol> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.8),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -96,7 +96,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.64),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -117,7 +117,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 2.1),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
@@ -141,7 +141,7 @@ class _SpecpolState extends State<Specpol> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 2.2),
+                        left: MediaQuery.of(context).size.width / 2.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(

@@ -71,12 +71,13 @@ class _WhoState extends State<Who> {
             padding:
                 EdgeInsets.only(top: MediaQuery.of(context).size.height / 3.3),
             child: Container(
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.6),
+                        left: MediaQuery.of(context).size.width / 2.5),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -97,7 +98,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.5),
+                        left: MediaQuery.of(context).size.width / 2.1),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -118,7 +119,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.8),
+                        left: MediaQuery.of(context).size.width / 3.2),
                     child: GestureDetector(
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
@@ -142,7 +143,7 @@ class _WhoState extends State<Who> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 1.88),
+                        left: MediaQuery.of(context).size.width / 3.4),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
