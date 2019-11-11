@@ -42,16 +42,17 @@ class _CharCris1State extends State<CharCris1> {
                 width: MediaQuery.of(context).size.width / 2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
-              Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+              Padding( padding: const EdgeInsets.all(30.0),
+               // padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
                 child: Text(
                   '''During his career Cosmin has been an inexperienced delegate, a decent delegate, a little over decent delegate and even though, for him, it may have seemed like the transformation happened overnight, a Deputy Chairperson, a Secretary-General and a Crisis expert with comprehensive, practical knowledge. His sole purpose this year, besides moderating his committee to the best of his abilities, is helping delegates reach their true potential because most people aren’t born “gifted” and there is plenty of room at the top of the MUN food chain. Maybe this sounds like another basic promise that is meant for compulsive readers but he thinks that his 3-year successful journey and the fact that he wasn’t anything special at the beginning prove his intentions and qualifications for the job he claims.''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

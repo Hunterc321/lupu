@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart' as prefix0;
 import 'package:flutter_lupu2/committees.dart';
 import 'package:flutter_lupu2/aboutUs.dart';
 import 'package:flutter_lupu2/rulesOfProcedures.dart';
@@ -11,14 +12,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_lupu2/newsPage.dart';
 import 'package:custom_navigator/custom_navigator.dart';
 import 'package:flutter_lupu2/splashScreen.dart';
-
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter/services.dart';
 
 GlobalKey globalKey = new GlobalKey(debugLabel: "btm_nav_bar");
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarBrightness: Brightness.light
+  ));
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  
   runApp(new MaterialApp(title:"sal",home: Splash()));
 }
 
@@ -68,6 +73,7 @@ class _MyAppState extends State<MyApp> {
                 image: DecorationImage(
                     image: AssetImage("asset/background.png"),
                     fit: BoxFit.cover))),
+
         new Container(
             //alignment: Alignment.topLeft,
             child: new DecoratedBox(
@@ -75,6 +81,7 @@ class _MyAppState extends State<MyApp> {
                     image: DecorationImage(
           image: AssetImage("asset/icon_appbar.png"),
           fit: BoxFit.fitWidth,
+
           alignment: Alignment.topCenter,
         )))),
 
@@ -84,7 +91,7 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               automaticallyImplyLeading: true,
               leading: IconButton(icon:Icon(Icons.arrow_back),
-                onPressed:() => navigatorKey.currentState.maybePop()
+                  onPressed:() => navigatorKey.currentState.maybePop()
               ),
 
               elevation: 0.0,
@@ -121,7 +128,7 @@ class _MyAppState extends State<MyApp> {
                       'asset/activeIcons/activeIcon_Commit.png',
                       height: 50,
                     ),
-                    title: Text('Commitesss')),
+                    title: Text('')),
                 BottomNavigationBarItem(
                     icon: Image.asset(
                       'asset/icon_Main.png',
@@ -131,7 +138,7 @@ class _MyAppState extends State<MyApp> {
                       'asset/activeIcons/activeIcon_home.png',
                       height: 50,
                     ),
-                    title: Text('Main')),
+                    title: Text('')),
                 BottomNavigationBarItem(
                     icon: Image.asset(
                       'asset/icon_rulesOfProcedures.png',
@@ -141,7 +148,7 @@ class _MyAppState extends State<MyApp> {
                       'asset/activeIcons/activeIcon_rulesOfProcedures.png',
                       height: 50,
                     ),
-                    title: Text('Rules')),
+                    title: Text('')),
                 BottomNavigationBarItem(
                     icon: Image.asset(
                       'asset/icon_aboutUs.png',
@@ -151,7 +158,7 @@ class _MyAppState extends State<MyApp> {
                       'asset/activeIcons/activeIcon_aboutUs.png',
                       height: 50,
                     ),
-                    title: Text('about Us'))
+                    title: Text(''))
               ],
             ),
             body: CustomNavigator(

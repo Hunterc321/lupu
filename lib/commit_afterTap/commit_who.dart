@@ -87,7 +87,7 @@ class _WhoState extends State<Who> {
                         "Schedule",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -108,7 +108,7 @@ class _WhoState extends State<Who> {
                         "Topics",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -132,7 +132,7 @@ class _WhoState extends State<Who> {
                         "Study Guide",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -153,7 +153,7 @@ class _WhoState extends State<Who> {
                         "Chairpersons",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",

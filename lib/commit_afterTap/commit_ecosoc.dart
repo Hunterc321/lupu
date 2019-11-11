@@ -86,7 +86,7 @@ class _EcosocState extends State<Ecosoc> {
                         "Schedule",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -107,7 +107,7 @@ class _EcosocState extends State<Ecosoc> {
                         "Topics",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -131,7 +131,7 @@ class _EcosocState extends State<Ecosoc> {
                         "Study Guide",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -152,7 +152,7 @@ class _EcosocState extends State<Ecosoc> {
                         "Chairpersons",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",

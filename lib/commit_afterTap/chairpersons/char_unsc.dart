@@ -26,7 +26,7 @@ class _CharUnscState extends State<CharUnsc> {
                 color: Colors.white,
                 fontSize: MediaQuery.of(context).size.height / 18,
                 decoration: TextDecoration.none,
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.bold,
                 fontFamily: "MontSerrat",
                 letterSpacing: 0),
           ),

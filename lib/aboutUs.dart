@@ -33,7 +33,7 @@ class _AboutUsState extends State<AboutUs> {
                   height: MediaQuery.of(context).size.height / 20,
                 ),
                 Text(
-                  "About Us",
+                  "About us",
                   style: TextStyle(
                       color: Color.fromRGBO(0, 119, 172, 5),
                       fontSize: MediaQuery.of(context).size.height / 18,

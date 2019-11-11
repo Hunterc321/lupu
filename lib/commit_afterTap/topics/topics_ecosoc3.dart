@@ -46,19 +46,19 @@ class _TopEco3State extends State<TopEco3> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''External debt is the amount of debt a country owes to foreign creditors: other governments, private commercial banks or global economic institutions such as the World Bank or the International Monetary Fund (IMF).
 Commonly, the Least Developed Countries (LDCs) need to take out loans in order to continue their progress towards the market economy since they fail to deliver enough money to invest in development projects. Needless to say, they are not the only ones indebted (see Germany’s unpaid debt from World War II).
 Nevertheless, more attention has been shown to the LDCs due to the rapidly growing debt recorded by António Guterres, the Secretary-General to have reached “seven point one trillion dollah in 2016, an increase of 80% since 2009...”. This evolution is caused, in many instances, by unforeseen social and economic changes, namely recessions, issues regarding the government of a country or simply delays in the time needed to reach the goals of the project the funds were used for, which overall triggers a vicious cycle.
 A government which has to give large sums of money to external creditors may be compelled to reduce funding on vital sectors, such as healthcare, education, infrastructure, even plans regarding the protection of its environment, but scarcely military. Prolonged periods of time in which these departments are deprived of much-needed money can cast the economy into a recession from which it would be nigh impossible to recover from without help.
 All things considered, numerous economists have come up with solutions, from which writing down or forgiving debt is the most debated and well-known one, although it can be considered morally wrong. This year’s ECOSOC meeting is expected to discover solutions in order to put an end to this complex and apparently unfathomable matter.
-''',
+''',textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

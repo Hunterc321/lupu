@@ -44,16 +44,16 @@ class _CharSpec3State extends State<CharSpec3> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''A fierce and determined character, Stefana, having just (officially) joined the IasiMUN family, is here for the flavour of the new formula of SPECPOL this year. Her activity as a delegate stands as proof that once she sets her mind on something, she is bound for success through perseverance. Stefana feels absolutely ecstatic about working alongside her magniloquent co-chair, Alexandra, to create the most memorable committee atmosphere yet.
 ''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

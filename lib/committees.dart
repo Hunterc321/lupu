@@ -31,7 +31,7 @@ class _CommittessState extends State<Committess> {
                   "Committees",
                   style: TextStyle(
                       color: Color.fromRGBO(0, 119, 172, 5),
-                      fontSize: MediaQuery.of(context).size.height / 16,
+                      fontSize: MediaQuery.of(context).size.height / 18,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold,
                       fontFamily: "MontSerrat",

@@ -61,7 +61,7 @@ class _SchoolMapState extends State<SchoolMap> {
                   height: MediaQuery.of(context).size.height / 100,
                 ),
                 Text(
-                  "School Floors",
+                  "School Map",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: MediaQuery.of(context).size.height / 18,
@@ -105,12 +105,12 @@ class _SchoolMapState extends State<SchoolMap> {
                 SizedBox(height: MediaQuery.of(context).size.height / 20),
                 GestureDetector(
                   onTap: () => pdfDef2().then((path) {
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => FullPdfViewerScreen(path)),
-    );
-    }),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FullPdfViewerScreen(path)),
+                    );
+                  }),
                   child: Image.asset(
                     "asset/theCity/theCity_2nd.png",
                     height: MediaQuery.of(context).size.height / 6,

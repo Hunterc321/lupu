@@ -5,13 +5,15 @@ import 'package:flutter_lupu2/rulesOfProcedures.dart';
 import 'package:flutter_lupu2/theCity.dart';
 import 'package:flutter_lupu2/main.dart';
 import 'package:flutter/cupertino.dart';
-
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 
 //Align(alignment:Alignment(-0.9,-0.7),child:new Image.asset('asset/mainMenuImages/main_theCity.png',height: 220,))
 class Home extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+
+  _HomeState createState()   => _HomeState();
 }
 
 class _HomeState extends State<Home> {

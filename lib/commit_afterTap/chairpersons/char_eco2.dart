@@ -43,15 +43,15 @@ class _CharEco2State extends State<CharEco2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''After attending seven conferences, with two delegate experiences in the Economic and Social Council and a chairing one in the ECOFIN Committee, you would think Nicola would want to escape the intricate world that is economy. However, after many struggles, cups of coffee and sleepless nights, she is now, more than ever, prepared to make her delegates fall in love with the mind-blowing and endless debates on economy, society and with MUNs as a whole, as she can say from the bottom of her heart that every MUN that she took part in changed her life in more ways than she could ever imagine.''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

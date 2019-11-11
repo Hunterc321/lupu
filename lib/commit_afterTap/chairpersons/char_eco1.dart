@@ -44,15 +44,15 @@ class _CharEco1State extends State<CharEco1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''A convinced optimist, a jovial and sedulous person, Alexandra as a Chairperson of the ECOSOC Committee has one true wish of this IasiMUN edition: to correspondently feel the pride and fulfilment a parent experiences when they see their child being the way they dreamt about themselves in the first place or even more spectacular. Go in front and show her what you got!''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

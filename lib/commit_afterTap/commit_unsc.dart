@@ -86,7 +86,7 @@ class _UnscState extends State<Unsc> {
                         "Schedule",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -107,7 +107,7 @@ class _UnscState extends State<Unsc> {
                         "Topics",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -131,7 +131,7 @@ class _UnscState extends State<Unsc> {
                         "Study Guide",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -152,7 +152,7 @@ class _UnscState extends State<Unsc> {
                         "Chairpersons",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",

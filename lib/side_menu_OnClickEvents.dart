@@ -21,24 +21,26 @@ class ImageClickEventState extends State<ImageClickEvent> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("asset/sideMenuBackground.png"),
-                    fit: BoxFit.cover))),
+                    fit: BoxFit.fill))),
         new Scaffold(
           backgroundColor: Colors.transparent,
+
           appBar:PreferredSize(child: AppBar(
+            automaticallyImplyLeading: false,
     elevation: 0.0,
     backgroundColor: Colors.transparent,
     ), preferredSize: Size.fromHeight(150)) ,
           body: Column( children: <Widget>[
-
+            SizedBox(height: MediaQuery.of(context).size.height / 30),
             GestureDetector(
                 onTap:()=> Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => News())),
                 child: Container(
-
                     child: Padding(
                       padding:  EdgeInsets.only(left:MediaQuery.of(context).size.width/4),
                       child: Image.asset(
-                          'asset/sideMenuNews.png',fit: BoxFit.fill,height:MediaQuery.of(context).size.height/10 ,
+                          'asset/sideMenuNews.png',fit: BoxFit.fill,
+                        height:MediaQuery.of(context).size.height/12 ,
                       ),
                     ))),
             SizedBox(height: MediaQuery.of(context).size.height / 30),
@@ -50,9 +52,10 @@ class ImageClickEventState extends State<ImageClickEvent> {
                     child: Padding(
                       padding:  EdgeInsets.only(left:MediaQuery.of(context).size.width/6),
                       child: Image.asset(
-                        'asset/sideMenuFacebook.png',fit: BoxFit.fill
+                          'asset/sideMenuFacebook.png',fit: BoxFit.fill
                       ),
                     ))),
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
             GestureDetector(
                 onTap:_launchURLInstagram ,
                 child: Container(
@@ -63,6 +66,7 @@ class ImageClickEventState extends State<ImageClickEvent> {
                         'asset/sideMenuInstagram.png',fit: BoxFit.fill,
                       ),
                     ))),
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
             GestureDetector(
                 onTap: _launchURLWebsite,
                 child: Container(
@@ -70,9 +74,10 @@ class ImageClickEventState extends State<ImageClickEvent> {
                     child: Padding(
                       padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/4.5),
                       child: Image.asset(
-                        'asset/sideMenuWebsite.png',fit: BoxFit.fill
+                          'asset/sideMenuWebsite.png',fit: BoxFit.fill
                       ),
                     ))),
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
             GestureDetector(
                 onTap: _launchURLContact,
                 child: Container(
@@ -80,11 +85,9 @@ class ImageClickEventState extends State<ImageClickEvent> {
                     child: Padding(
                       padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/4.5),
                       child: Image.asset(
-                        'asset/sideMenuContact.png',fit: BoxFit.fill
+                          'asset/sideMenuContact.png',fit: BoxFit.fill
                       ),
                     )))
-
-
 
           ]),
         )

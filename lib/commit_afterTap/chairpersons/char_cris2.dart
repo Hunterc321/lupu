@@ -44,17 +44,17 @@ class _CharCris2State extends State<CharCris2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''Taking into consideration that Ştefan loved debating, politics and the Russian Federation since he was a little kid, it was only natural for him to get involved in MUN conferences. 6 MUNs later, one as Deputy Secretary-General, he is just as excited as he was at his first one. 
 Future Crisis delegates, brace yourselves as he is brainstorming almost every night for both epic and extremely challenging crises.
 ''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

@@ -46,17 +46,17 @@ class _TopWho1State extends State<TopWho1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   ''' Depression is a highly common illness with more than 300 million people affected. It’s different from usual mood fluctuations or short-living emotional responses to everyday life challenges. It can cause the affected person to suffer greatly and function poorly at work, at school or in the family. At its worst, depression can lead to suicide. Almost 800.000 people die due to suicide every year. Suicide is the second leading cause of death in 15 to 29 year-olds.
 Although depression is among the few treatable mental illnesses, less than half of those affected in the world (in many countries, fewer than 10%) receive them. The barriers to effective treatment vary from lack of resources or infrastructure, few trained healthcare providers or even social stigma associated with mental disorders. Another barrier is inaccurate assessment. In most countries, people who are depressed usually not correctly diagnosed, and those who do not have the disorder, are often misdiagnosed and prescribed antidepressants way too often.
 But the factors that get a person to have this disorder are quite a lot. For starters, they can vary from social status, family and medical problems to just overall life quality.
-''',
+''',textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

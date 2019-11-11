@@ -50,16 +50,16 @@ class _TheConferenceState extends State<TheConference> {
           ],),
         ),
 
-        Container(padding: const EdgeInsets.all(10.0),
+        Container(padding: const EdgeInsets.all(30.0),
           child: Text(
             '''An MUN Conference is an academic simulation 
 of the United Nations where students play the role of delegates from  different countries and attempt to solve real world issues by means of the policies and perspectives of their assigned
 country. Technically speaking, an MUN is like an 
-improvised play, where everyone has to play a different role.''',
+improvised play, where everyone has to play a different role.''',textAlign: TextAlign.justify,
 
             style: TextStyle(
                 color: Color.fromRGBO(17, 29, 74, 5),
-                fontSize: MediaQuery.of(context).size.height / 45,
+                fontSize: MediaQuery.of(context).size.height / 50,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
@@ -74,40 +74,12 @@ improvised play, where everyone has to play a different role.''',
           height:MediaQuery.of(context).size.height/3 ,
           width:MediaQuery.of(context).size.width/2.8,),
         Container(padding: const EdgeInsets.all(30.0),
-          child: Text('''From the beginning, IasiMUN has been the 
-product of student ambition and ingenuity. The 
-first edition of IasiMUN in 2009 was the 
-brainchild of a group of students at Colegiul 
-National Emil Racovita, who were inspired to 
-create a forum for students to learn about the 
-challenges facing the world while also honing 
-their skills as thinkers and people who would 
-one day make a positive difference in the world. 
-Years later, the IasiMUN conference continues to 
-inspire new generations of students that take 
-part in its tradition.
-
-The spirit of IasiMUN is to think big; to imagine 
-solutions on a global scale while 
-accommodating the nuances of culture, history, 
-and interests in each country represented in the 
-UN. This is no small task and requires each 
-student to take seriously their role in the 
-conference. The value of participating in 
-IasiMUN is that it shows its participants that 
-their voice matters. The process of working with 
-and persuading other people is messy, 
-frustrating, and painful. And the process of 
-getting things accomplished takes grit, self-
-doubt, and perseverance – and even then, best 
-efforts are often met with failure. That harrowing 
-process distills student efforts and ideas into 
-extraordinary debates and solutions.
-''',textAlign: TextAlign.left,
+          child: Text('''From the beginning, IasiMUN has been the product of student ambition and ingenuity. The first edition of IasiMUN in 2009 was the brainchild of a group of students at Colegiul National Emil Racovita, who were inspired to create a forum for students to learn about the challenges facing the world while also honing their skills as thinkers and people who would one day make a positive difference in the world. Years later, the IasiMUN conference continues to inspire new generations of students that take part in its tradition. The spirit of IasiMUN is to think big; to imagine solutions on a global scale while accommodating the nuances of culture, history, and interests in each country represented in the UN. This is no small task and requires each student to take seriously their role in the conference. The value of participating in IasiMUN is that it shows its participants that their voice matters. The process of working with and persuading other people is messy, frustrating, and painful. And the process of getting things accomplished takes grit, self-doubt, and perseverance – and even then, best efforts are often met with failure. That harrowing process distills student efforts and ideas into extraordinary debates and solutions.
+''',textAlign: TextAlign.justify,
 
             style: TextStyle(
                 color: Color.fromRGBO(17, 29, 74, 5),
-                fontSize: MediaQuery.of(context).size.height / 45,
+                fontSize: MediaQuery.of(context).size.height / 50,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
@@ -120,14 +92,12 @@ extraordinary debates and solutions.
           "asset/aboutUs/tc_2.png",
           height:MediaQuery.of(context).size.height/3 ,
           width:MediaQuery.of(context).size.width/2.8,),
-        Container(padding: const EdgeInsets.all(10.0),
-          child: Text('''Our hope is that through IasiMUN, you will see
-your place in the world as something more than difference, recognizing the ambition and ingenuity it requires to make that difference.
-Welcome, and good luck.''',
-
+        Container(padding: const EdgeInsets.all(30.0),
+          child: Text('''Our hope is that through IasiMUN, you will see your place in the world as something more than difference, recognizing the ambition and ingenuity it requires to make that difference. Welcome, and good luck.''',
+            textAlign: TextAlign.justify,
             style: TextStyle(
                 color: Color.fromRGBO(17, 29, 74, 5),
-                fontSize: MediaQuery.of(context).size.height / 45,
+                fontSize: MediaQuery.of(context).size.height / 50,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
                 fontStyle: FontStyle.normal,
@@ -146,15 +116,41 @@ Welcome, and good luck.''',
               decorationColor: Color.fromRGBO(17, 29, 74, 5),
               decorationStyle: TextDecorationStyle.solid,
               fontWeight: FontWeight.bold,
-              fontFamily: "Roboto",
+              fontFamily: "montserrato",
               letterSpacing: 0),
+        ),
+        SizedBox(height: MediaQuery.of(context).size.height/20),
+        Text(
+          "PETRINA FRUNZA",textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Color.fromRGBO(17, 29, 74, 5),
+              fontSize: MediaQuery.of(context).size.height / 20,
+              decoration: TextDecoration.none,
+              fontWeight: FontWeight.bold,
+              fontFamily: "MontSerrat",
+              letterSpacing: 0),
+        ),
+        Text(
+          "Advisor",textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Color.fromRGBO(17, 29, 74, 5),
+              fontSize: MediaQuery.of(context).size.height / 35,
+              decoration: TextDecoration.none,
+              fontWeight: FontWeight.normal,
+
+              letterSpacing: 0),
+        ),
+        Image.asset(
+          "asset/aboutUs/tc_loghin.png",
+          height:MediaQuery.of(context).size.height/2,
+          width:MediaQuery.of(context).size.width,
         ),
         SizedBox(height: MediaQuery.of(context).size.height/20),
         Text(
           "ANDREI LOGHIN",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 18,
+              fontSize: MediaQuery.of(context).size.height / 20,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.bold,
               fontFamily: "MontSerrat",
@@ -164,7 +160,7 @@ Welcome, and good luck.''',
           "Secretary-General",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 33,
+              fontSize: MediaQuery.of(context).size.height / 35,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.normal,
 
@@ -180,7 +176,7 @@ Welcome, and good luck.''',
           "IOANA TAMACIUC",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 18,
+              fontSize: MediaQuery.of(context).size.height / 20,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.bold,
               fontFamily: "MontSerrat",
@@ -190,7 +186,7 @@ Welcome, and good luck.''',
           "Deputy Secretary-General",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 33,
+              fontSize: MediaQuery.of(context).size.height / 35,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.normal,
 
@@ -206,7 +202,7 @@ Welcome, and good luck.''',
           "TUDOR POPESCU",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 18,
+              fontSize: MediaQuery.of(context).size.height / 20,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.bold,
               fontFamily: "MontSerrat",
@@ -216,7 +212,7 @@ Welcome, and good luck.''',
           "Head Of Administrative Staff",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 33,
+              fontSize: MediaQuery.of(context).size.height / 35,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.normal,
 
@@ -232,7 +228,7 @@ Welcome, and good luck.''',
           "ANDREI MIHOCI",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 18,
+              fontSize: MediaQuery.of(context).size.height / 20,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.bold,
               fontFamily: "MontSerrat",
@@ -242,7 +238,7 @@ Welcome, and good luck.''',
           "Head Of Junior Administrative Staff",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 33,
+              fontSize: MediaQuery.of(context).size.height / 35,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.normal,
 
@@ -258,7 +254,7 @@ Welcome, and good luck.''',
           "GEORGIA GRADU",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 18,
+              fontSize: MediaQuery.of(context).size.height / 20,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.bold,
               fontFamily: "MontSerrat",
@@ -268,7 +264,7 @@ Welcome, and good luck.''',
           "Conference Manager",textAlign: TextAlign.center,
           style: TextStyle(
               color: Color.fromRGBO(17, 29, 74, 5),
-              fontSize: MediaQuery.of(context).size.height / 33,
+              fontSize: MediaQuery.of(context).size.height / 35,
               decoration: TextDecoration.none,
               fontWeight: FontWeight.normal,
 
@@ -276,7 +272,7 @@ Welcome, and good luck.''',
         ),
         Image.asset(
           "asset/aboutUs/tc_gradu.png",
-          height:MediaQuery.of(context).size.height/3,
+          height:MediaQuery.of(context).size.height,
           width:MediaQuery.of(context).size.width,
         ),
 

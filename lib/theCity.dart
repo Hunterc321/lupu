@@ -21,7 +21,7 @@ class _TheCityState extends State<TheCity> {
                       fit: BoxFit.cover))),
           Padding(
             padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height / 25),
+            EdgeInsets.only(top: MediaQuery.of(context).size.height / 25),
             child: Text(
               "The City",
               textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class _TheCityState extends State<TheCity> {
           ),
           Padding(
               padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 7),
+              EdgeInsets.only(top: MediaQuery.of(context).size.height / 5),
               child: Row(
                 children: <Widget>[
                   Column(

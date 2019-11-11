@@ -46,15 +46,15 @@ class _CharUnhrc2State extends State<CharUnhrc2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''After the success of last year's anniversary conference, Matei is ecstatically delighted to return to the UNHRC even more motivated and with higher expectations than before. Our chair would like to show his enormous gratification and appreciation to his delegates for making our conference possible, a very momentous and mesmerizing experience. With disproportionately and bewildering impatience, he is prone to being deeply hurt if the debate level does not raise up and stall up there during the conference, as you may have got used to in the previous editions of IașiMUN.According to him, a winning resolution should be thoroughly built through the nuances alluding to a theoretical and literal approach to the problem.It is highly imperative to note that newcomers are the most welcomed and encouraged to influence the outcome, as the less experienced ones pay the most attention to mistakes that lead to catastrophic situations.''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

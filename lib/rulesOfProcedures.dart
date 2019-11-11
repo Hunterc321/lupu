@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
@@ -149,24 +148,24 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
           ListView(
             children: <Widget>[
               Text(
-                "RULES OF",
+                "Rules of",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
-                    fontSize: MediaQuery.of(context).size.height / 20,
+                    fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.bold,
                     fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
               Text(
-                "PROCEDURES",
+                "Procedure",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 119, 172, 5),
-                    fontSize: MediaQuery.of(context).size.height / 20,
+                    fontSize: MediaQuery.of(context).size.height / 18,
                     decoration: TextDecoration.none,
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.bold,
                     fontFamily: "MontSerrat",
                     letterSpacing: 0),
               ),
@@ -195,6 +194,7 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width / 100),
                     child: GestureDetector(
+
                       onTap: () => pdfDef().then((path) {
                         Navigator.push(
                           context,
@@ -343,9 +343,12 @@ class _RulesOfProceduresState extends State<RulesOfProcedures> {
                           height: MediaQuery.of(context).size.height / 4,
                           width: MediaQuery.of(context).size.width / 2.2),
                     ),
+
                   ),
+                  SizedBox(height: MediaQuery.of(context).size.height/20),
                 ],
               ),
+              SizedBox(height: MediaQuery.of(context).size.height/20),
             ],
           )
         ],

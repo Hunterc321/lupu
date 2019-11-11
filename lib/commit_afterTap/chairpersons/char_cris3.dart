@@ -43,15 +43,15 @@ class _CharCris3State extends State<CharCris3> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''When he first heard about IasiMUN, Radu wasn’t too excited about it. Obviously, that changed once he participated in the conference for the first time and now he is following in his brother’s footsteps, as both a delegate and a chairperson, given that they are even co-chairing the same committee. In regards to this year’s conference, Radu’s goals are to learn more about what it means to be a chairperson from his more experienced colleagues and to inspire his delegates to be more confident and have as much fun as possible.''',
-
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

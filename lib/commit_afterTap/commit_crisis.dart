@@ -69,7 +69,7 @@ class _CrisisState extends State<Crisis> {
                         "Schedule",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -90,7 +90,7 @@ class _CrisisState extends State<Crisis> {
                         "Sets of directives",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",
@@ -101,7 +101,7 @@ class _CrisisState extends State<Crisis> {
                   SizedBox(height: MediaQuery.of(context).size.height / 50),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 6),
+                      left: MediaQuery.of(context).size.width / 6),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -111,7 +111,7 @@ class _CrisisState extends State<Crisis> {
                         "Chairpersons",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height / 30,
+                            fontSize: MediaQuery.of(context).size.height / 33.5,
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.bold,
                             fontFamily: "MontSerrat",

@@ -47,17 +47,17 @@ class _TopUnhrc1State extends State<TopUnhrc1> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''Contemporary slavery, known as modern slavery or neo-slavery, refers to institutional bondage that continues to occur in present-day society. Underdeveloped countries that lack education, economic freedom, the rule of law and a proper societal structure can create an environment that fosters the acceptance and propagation of slavery. Enslavement is prevalent in countries with vulnerable minority communities, though it also exists in developed countries. Sadly, slavery did not end with abolition in the 19th century. Instead, it changed its forms and continues to harm people in every country in the world. Some of the types of slavery may refer to forced labour, human trafficking, child slavery or forced and early marriage.
 Neo-slavery is less about people owning other people, but more about being exploited, completely controlled by someone else, with no escape. In the older form of slavery, slave-owners spent more on getting slaves. The cost of keeping them healthy was considered a better investment than getting another slave to replace them. While today, people are easier to get at a lower price so replacing them becomes easier. Slaves are used in areas where they could easily be hidden while also creating a profit for the exploiter.
 There are 40.3 million people defining neo-slavery. Their lives are controlled by their exploiters, they no longer have a free choice and they have to do as they’re told. Thus, the UNHRC committee is here to find new innovative solutions to finally put an end to this unbelievable and sad trauma.
-''',
+''',textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),

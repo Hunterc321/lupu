@@ -46,7 +46,7 @@ class _TopWho2State extends State<TopWho2> {
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+                padding: const EdgeInsets.all(30.0),
                 child: Text(
                   '''Good health is essential to sustain economic and social development and poverty reduction. Access to needed health services is crucial for maintaining and improving health.
 Universal Health Coverage, also known as UHC, means that all individuals and communities receive the health services they need without suffering financial hardship. It includes the full spectrum of essential, quality health services, from health promotion to prevention, treatment, rehabilitation, and palliative care.
@@ -63,11 +63,12 @@ Questions to keep in mind:
 •	What are the major impediments that prevent UHC from happening?
 •	How can it be financed?
 •	What are the main requirements for countries to achieve UHC?''',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 45,
+                      fontSize: MediaQuery.of(context).size.height / 50,
                       decoration: TextDecoration.none,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       fontFamily: "MontSerrat",
                       letterSpacing: 0),
                 ),
