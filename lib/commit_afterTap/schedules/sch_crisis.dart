@@ -9,11 +9,18 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_cris.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/resolution/dir_crisis.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
+
 
 class SchCrisis extends StatefulWidget {
   @override
   _SchCrisisState createState() => _SchCrisisState();
 }
+
+
 
 class _SchCrisisState extends State<SchCrisis> {
   @override
@@ -27,6 +34,7 @@ class _SchCrisisState extends State<SchCrisis> {
                   image: DecorationImage(
                       image: AssetImage("asset/commit_background.png"),
                       fit: BoxFit.cover))),
+
           ListView(
             scrollDirection: Axis.vertical,
             children: <Widget>[
@@ -57,49 +65,82 @@ class _SchCrisisState extends State<SchCrisis> {
                   scrollDirection: Axis.horizontal,
 
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(0),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(0),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(0),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -109,17 +150,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(0),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -132,129 +184,85 @@ class _SchCrisisState extends State<SchCrisis> {
 
                 ),
                 child: ListView(
-                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              Container(
-    height:MediaQuery.of(context).size.height/35,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    border: Border(bottom:BorderSide(color:Colors.black))
 
-                ),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(1),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(1),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(1),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -264,17 +272,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(1),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -288,50 +307,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(2),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(2),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(2),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -340,18 +393,29 @@ class _SchCrisisState extends State<SchCrisis> {
                 height: MediaQuery.of(context).size.height / 40,
               ),
               Container(
-    width:MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                width: MediaQuery.of(context).size.width,
+                child: FutureBuilder(
+                    future: getDataDesc(2),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -365,50 +429,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(3),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(3),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(3),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -417,18 +515,29 @@ class _SchCrisisState extends State<SchCrisis> {
                 height: MediaQuery.of(context).size.height / 40,
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                width:MediaQuery.of(context).size.width,
+                child: FutureBuilder(
+                    future: getDataDesc(3),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -442,50 +551,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(4),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(4),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(4),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -494,18 +637,151 @@ class _SchCrisisState extends State<SchCrisis> {
                 height: MediaQuery.of(context).size.height / 40,
               ),
               Container(
-    width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
+                width: MediaQuery.of(context).size.width,
+                child: FutureBuilder(
+                    future: getDataDesc(4),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 20,
+              ),
+              Container(
+                height:MediaQuery.of(context).size.height/35,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border(bottom:BorderSide(color:Colors.black))
+
                 ),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+
+                  children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(5),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(5),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataLoc(5),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 40,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: FutureBuilder(
+                    future: getDataDesc(5),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -518,50 +794,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(6),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(6),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(6),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -571,17 +881,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(6),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -594,51 +915,85 @@ class _SchCrisisState extends State<SchCrisis> {
 
                 ),
                 child: ListView(
-                  scrollDirection:  Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(7),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(7),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(7),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -649,17 +1004,28 @@ class _SchCrisisState extends State<SchCrisis> {
               Container(
 
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(7),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 20),
               Text(
@@ -686,50 +1052,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(8),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(8),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(8),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -739,17 +1139,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child:FutureBuilder(
+                    future: getDataDesc(8),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -763,50 +1174,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(9),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(9),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(9),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -816,17 +1261,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(9),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -840,50 +1296,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(10),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(10),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(10),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -893,17 +1383,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(10),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -917,50 +1418,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(11),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(11),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(11),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -970,17 +1505,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(11),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -994,50 +1540,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(12),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(12),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(12),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1047,17 +1627,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(12),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1071,50 +1662,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(13),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(13),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(13),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1124,17 +1749,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(13),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1163,50 +1799,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(14),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(14),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(14),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1216,17 +1886,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(14),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1240,50 +1921,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(15),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(15),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(15),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1293,17 +2008,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(15),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1317,50 +2043,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(16),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(16),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(16),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1370,17 +2130,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(16),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1394,50 +2165,84 @@ class _SchCrisisState extends State<SchCrisis> {
                 ),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+
                   children: <Widget>[
+
+                    FutureBuilder(
+                        future: getDataTitle(17),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+
+                            return Text(
+                              snapshot.data,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(17, 29, 74, 5),
+                                  fontSize: MediaQuery.of(context).size.height / 40,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: "MontSerrat",
+                                  letterSpacing: 0
+
+                              ),
+
+                            );
+
+                          }
+                          return CircularProgressIndicator();
+                        }),
+
+
                     Padding(
                       padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 20),
-                      child: Text(
-                        "Event Title",
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                          left: MediaQuery.of(context).size.width / 10),
+                      child: FutureBuilder(
+                          future: getDataSch(17),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Schedule",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 10),
-                      child: Text(
-                        "Event Location",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(17, 29, 74, 5),
-                            fontSize: MediaQuery.of(context).size.height / 40,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: "montserrat",
-                            letterSpacing: 0),
-                      ),
+                      child: FutureBuilder(
+                          future: getDataLoc(17),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+
+                              return Text(
+                                snapshot.data,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(17, 29, 74, 5),
+                                    fontSize: MediaQuery.of(context).size.height / 40,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal,
+                                    fontFamily: "MontSerrat",
+                                    letterSpacing: 0
+
+                                ),
+
+                              );
+
+                            }
+                            return CircularProgressIndicator();
+                          }),
                     ),
                   ],
                 ),
@@ -1447,17 +2252,28 @@ class _SchCrisisState extends State<SchCrisis> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Text(
-                  "Description",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromRGBO(17, 29, 74, 5),
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      decoration: TextDecoration.none,
-                      fontWeight: FontWeight.normal,
-                      fontFamily: "montserrat",
-                      letterSpacing: 0),
-                ),
+                child: FutureBuilder(
+                    future: getDataDesc(17),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+
+                        return Text(
+                          snapshot.data,
+                          style: TextStyle(
+                              color: Color.fromRGBO(17, 29, 74, 5),
+                              fontSize: MediaQuery.of(context).size.height / 40,
+                              decoration: TextDecoration.none,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "MontSerrat",
+                              letterSpacing: 0
+
+                          ),
+
+                        );
+
+                      }
+                      return CircularProgressIndicator();
+                    }),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -1468,4 +2284,38 @@ class _SchCrisisState extends State<SchCrisis> {
       ),
     );
   }
+}
+
+Map<String, dynamic> data;
+Future<String> getDataTitle(int i) async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==CRISIS"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data["events"][i]["title"]);
+  return data["events"][i]["title"].toString();
+}
+Future<String> getDataSch(int i) async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=CRISIS"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data["events"][i]["schedule"]);
+  return data["events"][i]["schedule"].toString();
+}
+Future<String> getDataLoc(int i) async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==CRISIS"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data["events"][i]["location"]);
+  return data["events"][i]["location"].toString();
+}
+Future<String> getDataDesc(int i) async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==CRISIS"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data["events"][i]["description"]);
+  return data["events"][i]["description"].toString();
 }
