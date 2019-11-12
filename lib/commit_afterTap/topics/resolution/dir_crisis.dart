@@ -10,12 +10,25 @@ import 'package:flutter_lupu2/commit_afterTap/chairpersons/char_unhrc.dart';
 import 'package:flutter_lupu2/commit_afterTap/topics/topics_unhrc.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class DirCrisis extends StatefulWidget {
   @override
   _DirCrisisState createState() => _DirCrisisState();
 }
 
+Map<String, dynamic> data;
+Future<String> getDataPDF() async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=CRISIS"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data["topics"][0]["resolutions"][0]["linkToResource"]);
+  return data["topics"][0]["resolutions"][0]["linkToResource"].toString();
+}
 class _DirCrisisState extends State<DirCrisis> {
   @override
   Widget build(BuildContext context) {
@@ -40,7 +53,7 @@ class _DirCrisisState extends State<DirCrisis> {
               Padding(
                 padding: EdgeInsets.all(MediaQuery.of(context).size.width/10),
                 child: GestureDetector(
-                  onTap: _launchURLSODS,
+                  onTap: _launchURL,
                   child: Image.asset(
                     "asset/topics/SODs.png",
                     height: MediaQuery.of(context).size.height / 7,
@@ -59,8 +72,11 @@ class _DirCrisisState extends State<DirCrisis> {
   }
 }
 
-_launchURLSODS() async {
-  const url = "http://www.orimi.com/pdf-test.pdf";
+
+_launchURL() async {
+  var pdf = await getDataPDF();
+  var url =
+      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {

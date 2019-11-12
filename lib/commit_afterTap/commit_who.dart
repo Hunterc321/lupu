@@ -179,8 +179,11 @@ class FullPdfViewerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PDFViewerScaffold(
-        appBar: AppBar(
-          title: Text("Document"),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height/8.5),
+          child: AppBar(
+            title: Text("Document"),
+          ),
         ),
         path: pdfPath);
   }
