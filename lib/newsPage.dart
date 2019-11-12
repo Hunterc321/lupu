@@ -10,7 +10,10 @@ import 'package:flutter_lupu2/commit_afterTap/commit_unhrc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_lupu2/newsPage.dart';
 import 'package:custom_navigator/custom_navigator.dart';
-
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_lupu2/side_menu_OnClickEvents.dart';
 
 class News extends StatefulWidget {
@@ -39,6 +42,7 @@ class _NewsState extends State<News> {
 
             ),
         ),
+
         Padding(
           padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height/8),
           child: Container(child: Column(children: <Widget>[
@@ -55,16 +59,19 @@ class _NewsState extends State<News> {
             ),
             SizedBox(height: MediaQuery.of(context).size.height/40,),
 
-            Image.asset(
-                "asset/newsPage/news_d1.png",
-                height:MediaQuery.of(context).size.height/6 ,fit:BoxFit.fill,
-                width:MediaQuery.of(context).size.width/1.2
+            GestureDetector(
+              onTap:()=>_launchURL(0) ,
+              child: Image.asset(
+                  "asset/newsPage/news_d1.png",
+                  height:MediaQuery.of(context).size.height/6 ,fit:BoxFit.fill,
+                  width:MediaQuery.of(context).size.width/1.2
 
 
+              ),
             ),
             SizedBox(height:MediaQuery.of(context).size.height/20),
 
-            GestureDetector(
+            GestureDetector(onTap: ()=>_launchURL(1),
 
               child: Image.asset(
                 "asset/newsPage/news_d2.png",
@@ -81,6 +88,7 @@ class _NewsState extends State<News> {
             SizedBox(height:MediaQuery.of(context).size.height/20),
 
             GestureDetector(
+              onTap: ()=>_launchURL(2),
 
               child: Image.asset(
                 "asset/newsPage/news_d3.png",
@@ -92,20 +100,6 @@ class _NewsState extends State<News> {
             ),
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           ],),),
         )
 
@@ -115,6 +109,26 @@ class _NewsState extends State<News> {
     ),);
   }
 }
+List<dynamic> data;
+_launchURL(int i) async {
+  var pdf = await getDataPDF(i);
+  var url =
+      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+Future<String> getDataPDF(int i) async {
+  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/newsroom"),
+      headers: {"Accept": "application/json"});
+  data = json.decode(response.body);
+
+  print(data[i]["uri"]);
+  return data[i]["uri"].toString();
+}
+
 
 
 
