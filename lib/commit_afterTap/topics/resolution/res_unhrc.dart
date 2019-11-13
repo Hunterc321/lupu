@@ -25,7 +25,7 @@ Map<String, dynamic> data2;
 Map<String, dynamic> data3;
 Map<String, dynamic> data4;
 Future<String> getData() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -34,7 +34,7 @@ Future<String> getData() async {
 }
 
 Future<String> getDataPDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -43,7 +43,7 @@ Future<String> getDataPDF() async {
 }
 
 Future<String> getData1() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data1 = json.decode(response.body);
 
@@ -52,7 +52,7 @@ Future<String> getData1() async {
 }
 
 Future<String> getData1PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data1 = json.decode(response.body);
 
@@ -61,39 +61,39 @@ Future<String> getData1PDF() async {
 }
 
 Future<String> getData2() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["passed"]);
-  return data2["topics"][0]["resolutions"][2]["passed"].toString();
+  print(data2["topics"][1]["resolutions"][0]["passed"]);
+  return data2["topics"][1]["resolutions"][0]["passed"].toString();
 }
 
 Future<String> getData2PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["linkToResource"]);
-  return data2["topics"][0]["resolutions"][2]["linkToResource"].toString();
+  print(data2["topics"][1]["resolutions"][0]["linkToResource"]);
+  return data2["topics"][1]["resolutions"][0]["linkToResource"].toString();
 }
 
 Future<String> getData3() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["passed"]);
-  return data3["topics"][0]["resolutions"][3]["passed"].toString();
+  print(data3["topics"][1]["resolutions"][1]["passed"]);
+  return data3["topics"][1]["resolutions"][1]["passed"].toString();
 }
 
 Future<String> getData3PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=UNHRC"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNHRC"),
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["linkToResource"]);
-  return data3["topics"][0]["resolutions"][3]["linkToResource"].toString();
+  print(data3["topics"][1]["resolutions"][1]["linkToResource"]);
+  return data3["topics"][1]["resolutions"][1]["linkToResource"].toString();
 }
 
 class _ResUnhrcState extends State<ResUnhrc> {
@@ -105,6 +105,7 @@ class _ResUnhrcState extends State<ResUnhrc> {
         children: <Widget>[
           ListView(
             children: <Widget>[
+              RaisedButton(onPressed: getDataPDF,child: Text("sal"),),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 100,
               ),
@@ -138,11 +139,14 @@ class _ResUnhrcState extends State<ResUnhrc> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res1Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL,
+                          child: Image.asset(
+                            "asset/topics/res1Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -164,11 +168,14 @@ class _ResUnhrcState extends State<ResUnhrc> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res2Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL1,
+                          child: Image.asset(
+                            "asset/topics/res2Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -190,11 +197,14 @@ class _ResUnhrcState extends State<ResUnhrc> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res3Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL2,
+                          child: Image.asset(
+                            "asset/topics/res3Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -216,11 +226,14 @@ class _ResUnhrcState extends State<ResUnhrc> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res4Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL3,
+                          child: Image.asset(
+                            "asset/topics/res4Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -237,7 +250,7 @@ class _ResUnhrcState extends State<ResUnhrc> {
 _launchURL() async {
   var pdf = await getDataPDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -248,7 +261,7 @@ _launchURL() async {
 _launchURL1() async {
   var pdf = await getData1PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -259,7 +272,7 @@ _launchURL1() async {
 _launchURL2() async {
   var pdf = await getData2PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -270,7 +283,7 @@ _launchURL2() async {
 _launchURL3() async {
   var pdf = await getData3PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {

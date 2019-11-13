@@ -113,7 +113,7 @@ List<dynamic> data;
 _launchURL(int i) async {
   var pdf = await getDataPDF(i);
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/news-article/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -121,7 +121,7 @@ _launchURL(int i) async {
   }
 }
 Future<String> getDataPDF(int i) async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/newsroom"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/newsroom"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 

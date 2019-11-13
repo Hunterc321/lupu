@@ -22,7 +22,7 @@ class DirCrisis extends StatefulWidget {
 
 Map<String, dynamic> data;
 Future<String> getDataPDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=CRISIS"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=CRISIS"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -76,7 +76,7 @@ class _DirCrisisState extends State<DirCrisis> {
 _launchURL() async {
   var pdf = await getDataPDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {

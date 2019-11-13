@@ -24,7 +24,7 @@ Map<String, dynamic> data2;
 Map<String, dynamic> data3;
 Map<String, dynamic> data4;
 Future<String> getData() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -33,7 +33,7 @@ Future<String> getData() async {
 }
 
 Future<String> getDataPDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -42,7 +42,7 @@ Future<String> getDataPDF() async {
 }
 
 Future<String> getData1() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data1 = json.decode(response.body);
 
@@ -51,7 +51,7 @@ Future<String> getData1() async {
 }
 
 Future<String> getData1PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data1 = json.decode(response.body);
 
@@ -60,7 +60,7 @@ Future<String> getData1PDF() async {
 }
 
 Future<String> getData2() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
@@ -69,7 +69,7 @@ Future<String> getData2() async {
 }
 
 Future<String> getData2PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
@@ -78,7 +78,7 @@ Future<String> getData2PDF() async {
 }
 
 Future<String> getData3() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
@@ -87,7 +87,7 @@ Future<String> getData3() async {
 }
 
 Future<String> getData3PDF() async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=WHO"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=WHO"),
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
@@ -104,6 +104,7 @@ class _ResWhoState extends State<ResWho> {
         children: <Widget>[
           ListView(
             children: <Widget>[
+              RaisedButton(onPressed: _launchURL,child: Text("SAL"),),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 100,
               ),
@@ -236,7 +237,7 @@ class _ResWhoState extends State<ResWho> {
 _launchURL() async {
   var pdf = await getDataPDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/"+pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -247,7 +248,7 @@ _launchURL() async {
 _launchURL1() async {
   var pdf = await getData1PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -258,7 +259,7 @@ _launchURL1() async {
 _launchURL2() async {
   var pdf = await getData2PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -269,7 +270,7 @@ _launchURL2() async {
 _launchURL3() async {
   var pdf = await getData3PDF();
   var url =
-      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/" + pdf;
+      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
   if (await canLaunch(url)) {
     await launch(url);
   } else {

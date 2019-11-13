@@ -2286,7 +2286,7 @@ class _SchSpecState extends State<SchSpec> {
 
 Map<String, dynamic> data;
 Future<String> getDataTitle(int i) async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==SPECPOL"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=SPECPOL"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -2294,7 +2294,7 @@ Future<String> getDataTitle(int i) async {
   return data["events"][i]["title"].toString();
 }
 Future<String> getDataSch(int i) async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title=SPECPOL"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=SPECPOL"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -2302,7 +2302,7 @@ Future<String> getDataSch(int i) async {
   return data["events"][i]["schedule"].toString();
 }
 Future<String> getDataLoc(int i) async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==SPECPOL"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=SPECPOL"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
@@ -2310,7 +2310,7 @@ Future<String> getDataLoc(int i) async {
   return data["events"][i]["location"].toString();
 }
 Future<String> getDataDesc(int i) async {
-  var response = await http.get(Uri.encodeFull("http://10.0.2.2:3000/api/committees?title==SPECPOL"),
+  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=SPECPOL"),
       headers: {"Accept": "application/json"});
   data = json.decode(response.body);
 
