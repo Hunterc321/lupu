@@ -141,7 +141,7 @@ improvised play, where everyone has to play a different role.''',textAlign: Text
               letterSpacing: 0),
         ),
         Image.asset(
-          "asset/aboutUs/tc_loghin.png",
+          "asset/aboutUs/tc_frunza.png",
           height:MediaQuery.of(context).size.height/2,
           width:MediaQuery.of(context).size.width,
         ),

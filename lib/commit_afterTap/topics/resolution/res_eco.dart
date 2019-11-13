@@ -66,8 +66,8 @@ Future<String> getData2() async {
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["passed"]);
-  return data2["topics"][0]["resolutions"][2]["passed"].toString();
+  print(data2["topics"][1]["resolutions"][0]["passed"]);
+  return data2["topics"][1]["resolutions"][0]["passed"].toString();
 }
 
 Future<String> getData2PDF() async {
@@ -75,8 +75,8 @@ Future<String> getData2PDF() async {
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["linkToResource"]);
-  return data2["topics"][0]["resolutions"][2]["linkToResource"].toString();
+  print(data2["topics"][1]["resolutions"][0]["linkToResource"]);
+  return data2["topics"][1]["resolutions"][0]["linkToResource"].toString();
 }
 
 Future<String> getData3() async {
@@ -84,8 +84,8 @@ Future<String> getData3() async {
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["passed"]);
-  return data3["topics"][0]["resolutions"][3]["passed"].toString();
+  print(data3["topics"][1]["resolutions"][1]["passed"]);
+  return data3["topics"][1]["resolutions"][1]["passed"].toString();
 }
 
 Future<String> getData3PDF() async {
@@ -93,40 +93,40 @@ Future<String> getData3PDF() async {
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["linkToResource"]);
-  return data3["topics"][0]["resolutions"][3]["linkToResource"].toString();
+  print(data3["topics"][1]["resolutions"][1]["linkToResource"]);
+  return data3["topics"][1]["resolutions"][1]["linkToResource"].toString();
 }
 Future<String> getData4() async {
   var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=ECOSOC"),
       headers: {"Accept": "application/json"});
   data4 = json.decode(response.body);
 
-  print(data4["topics"][0]["resolutions"][4]["passed"]);
-  return data4["topics"][0]["resolutions"][4]["passed"].toString();
+  print(data4["topics"][2]["resolutions"][0]["passed"]);
+  return data4["topics"][2]["resolutions"][0]["passed"].toString();
 }
 Future<String> getData4PDF() async {
   var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=ECOSOC"),
       headers: {"Accept": "application/json"});
   data4 = json.decode(response.body);
 
-  print(data4["topics"][0]["resolutions"][4]["linkToResource"]);
-  return data4["topics"][0]["resolutions"][4]["linkToResource"].toString();
+  print(data4["topics"][2]["resolutions"][0]["linkToResource"]);
+  return data4["topics"][2]["resolutions"][0]["linkToResource"].toString();
 }
 Future<String> getData5() async {
   var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=ECOSOC"),
       headers: {"Accept": "application/json"});
   data5 = json.decode(response.body);
 
-  print(data5["topics"][0]["resolutions"][5]["passed"]);
-  return data5["topics"][0]["resolutions"][5]["passed"].toString();
+  print(data5["topics"][2]["resolutions"][1]["passed"]);
+  return data5["topics"][2]["resolutions"][1]["passed"].toString();
 }
 Future<String> getData5PDF() async {
   var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=ECOSOC"),
       headers: {"Accept": "application/json"});
   data5 = json.decode(response.body);
 
-  print(data5["topics"][0]["resolutions"][5]["linkToResource"]);
-  return data5["topics"][0]["resolutions"][5]["linkToResource"].toString();
+  print(data5["topics"][2]["resolutions"][1]["linkToResource"]);
+  return data5["topics"][2]["resolutions"][1]["linkToResource"].toString();
 }
 
 class _ResEcoState extends State<ResEco> {
@@ -171,11 +171,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res1Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL,
+                          child: Image.asset(
+                            "asset/topics/res1Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -197,11 +200,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res2Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL1,
+                          child: Image.asset(
+                            "asset/topics/res2Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -223,11 +229,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res3Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL2,
+                          child: Image.asset(
+                            "asset/topics/res3Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -249,11 +258,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res4Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL3,
+                          child: Image.asset(
+                            "asset/topics/res4Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -275,11 +287,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res5Cnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL4,
+                          child: Image.asset(
+                            "asset/topics/res5Cnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -301,11 +316,14 @@ class _ResEcoState extends State<ResEco> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res6Cnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL5,
+                          child: Image.asset(
+                            "asset/topics/res6Cnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }

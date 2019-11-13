@@ -64,8 +64,8 @@ Future<String> getData2() async {
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["passed"]);
-  return data2["topics"][0]["resolutions"][2]["passed"].toString();
+  print(data2["topics"][1]["resolutions"][0]["passed"]);
+  return data2["topics"][1]["resolutions"][0]["passed"].toString();
 }
 
 Future<String> getData2PDF() async {
@@ -73,8 +73,8 @@ Future<String> getData2PDF() async {
       headers: {"Accept": "application/json"});
   data2 = json.decode(response.body);
 
-  print(data2["topics"][0]["resolutions"][2]["linkToResource"]);
-  return data2["topics"][0]["resolutions"][2]["linkToResource"].toString();
+  print(data2["topics"][1]["resolutions"][0]["linkToResource"]);
+  return data2["topics"][1]["resolutions"][0]["linkToResource"].toString();
 }
 
 Future<String> getData3() async {
@@ -82,8 +82,8 @@ Future<String> getData3() async {
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["passed"]);
-  return data3["topics"][0]["resolutions"][3]["passed"].toString();
+  print(data3["topics"][1]["resolutions"][1]["passed"]);
+  return data3["topics"][1]["resolutions"][1]["passed"].toString();
 }
 
 Future<String> getData3PDF() async {
@@ -91,8 +91,8 @@ Future<String> getData3PDF() async {
       headers: {"Accept": "application/json"});
   data3 = json.decode(response.body);
 
-  print(data3["topics"][0]["resolutions"][3]["linkToResource"]);
-  return data3["topics"][0]["resolutions"][3]["linkToResource"].toString();
+  print(data3["topics"][1]["resolutions"][1]["linkToResource"]);
+  return data3["topics"][1]["resolutions"][1]["linkToResource"].toString();
 }
 class _ResSpecState extends State<ResSpec> {
   @override
@@ -136,11 +136,14 @@ class _ResSpecState extends State<ResSpec> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res1Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap:_launchURL ,
+                          child: Image.asset(
+                            "asset/topics/res1Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -162,11 +165,14 @@ class _ResSpecState extends State<ResSpec> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res2Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL1,
+                          child: Image.asset(
+                            "asset/topics/res2Anot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -188,11 +194,14 @@ class _ResSpecState extends State<ResSpec> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res3Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL2,
+                          child: Image.asset(
+                            "asset/topics/res3Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }
@@ -214,11 +223,14 @@ class _ResSpecState extends State<ResSpec> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res4Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
+                        return GestureDetector(
+                          onTap: _launchURL3,
+                          child: Image.asset(
+                            "asset/topics/res4Bnot.png",
+                            height: MediaQuery.of(context).size.height / 6,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            fit: BoxFit.fill,
+                          ),
                         );
                       }
                     }

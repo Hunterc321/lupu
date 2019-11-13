@@ -105,7 +105,6 @@ class _ResUnhrcState extends State<ResUnhrc> {
         children: <Widget>[
           ListView(
             children: <Widget>[
-              RaisedButton(onPressed: getDataPDF,child: Text("sal"),),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 100,
               ),

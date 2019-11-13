@@ -40,42 +40,6 @@ Future<String> getDataPDF() async {
   return data["topics"][0]["resolutions"][0]["linkToResource"].toString();
 }
 
-Future<String> getData1() async {
-  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNSC"),
-      headers: {"Accept": "application/json"});
-  data1 = json.decode(response.body);
-
-  print(data1["topics"][0]["resolutions"][1]["passed"]);
-  return data1["topics"][0]["resolutions"][1]["passed"].toString();
-}
-
-Future<String> getData1PDF() async {
-  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNSC"),
-      headers: {"Accept": "application/json"});
-  data1 = json.decode(response.body);
-
-  print(data1["topics"][0]["resolutions"][1]["linkToResource"]);
-  return data1["topics"][0]["resolutions"][1]["linkToResource"].toString();
-}
-
-Future<String> getData2() async {
-  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNSC"),
-      headers: {"Accept": "application/json"});
-  data2 = json.decode(response.body);
-
-  print(data2["topics"][1]["resolutions"][0]["passed"]);
-  return data2["topics"][1]["resolutions"][0]["passed"].toString();
-}
-
-Future<String> getData2PDF() async {
-  var response = await http.get(Uri.encodeFull("https://iasimun-cneris.tuiasi.ro/api/committees?title=UNSC"),
-      headers: {"Accept": "application/json"});
-  data2 = json.decode(response.body);
-
-  print(data2["topics"][0]["resolutions"][2]["linkToResource"]);
-  return data2["topics"][0]["resolutions"][2]["linkToResource"].toString();
-}
-
 
 
 class _ResUnscState extends State<ResUnsc> {
@@ -120,68 +84,20 @@ class _ResUnscState extends State<ResUnsc> {
                           ),
                         );
                       } else {
-                        return Image.asset(
-                          "asset/topics/res1Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
-                        );
-                      }
-                    }
-                    return CircularProgressIndicator();
-                  }),
-              SizedBox(height: MediaQuery.of(context).size.height / 20),
-              FutureBuilder(
-                  future: getData1(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      if (snapshot.data == "true") {
                         return GestureDetector(
-                          onTap: _launchURL1,
+                          onTap:_launchURL ,
                           child: Image.asset(
-                            "asset/topics/res2Apass.png",
+                            "asset/topics/res1Anot.png",
                             height: MediaQuery.of(context).size.height / 6,
                             width: MediaQuery.of(context).size.width / 1.2,
                             fit: BoxFit.fill,
                           ),
                         );
-                      } else {
-                        return Image.asset(
-                          "asset/topics/res2Anot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
-                        );
                       }
                     }
                     return CircularProgressIndicator();
                   }),
-              SizedBox(height: MediaQuery.of(context).size.height / 20),
-              FutureBuilder(
-                  future: getData2(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      if (snapshot.data == "true") {
-                        return GestureDetector(
-                          onTap: _launchURL2,
-                          child: Image.asset(
-                            "asset/topics/res3Bpas.png",
-                            height: MediaQuery.of(context).size.height / 6,
-                            width: MediaQuery.of(context).size.width / 1.2,
-                            fit: BoxFit.fill,
-                          ),
-                        );
-                      } else {
-                        return Image.asset(
-                          "asset/topics/res3Bnot.png",
-                          height: MediaQuery.of(context).size.height / 6,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          fit: BoxFit.fill,
-                        );
-                      }
-                    }
-                    return CircularProgressIndicator();
-                  }),
+
             ],
           )
         ],
@@ -201,24 +117,5 @@ _launchURL() async {
   }
 }
 
-_launchURL1() async {
-  var pdf = await getData1PDF();
-  var url =
-      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
 
-_launchURL2() async {
-  var pdf = await getData2PDF();
-  var url =
-      "https://iasimun-cneris.tuiasi.ro/api/files/resolution/" + pdf;
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
+
