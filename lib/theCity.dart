@@ -37,80 +37,84 @@ class _TheCityState extends State<TheCity> {
           Padding(
               padding:
               EdgeInsets.only(top: MediaQuery.of(context).size.height / 5),
-              child: Row(
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width / 30),
-                        child: GestureDetector(
-                          onTap: _launchURLBus,
-                          child: Image.asset(
-                            "asset/theCity/theCity_bus.png",
-                            height: MediaQuery.of(context).size.height / 3.1,
-                            fit: BoxFit.fill,
-                            width: MediaQuery.of(context).size.width / 2.1,
-                            alignment: Alignment.topLeft,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width / 30),
-                        child: Padding(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Row(
+
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 45),
+                              left: MediaQuery.of(context).size.width / 30),
                           child: GestureDetector(
-                            onTap: _launchURLTaxi,
+                            onTap: _launchURLBus,
                             child: Image.asset(
-                              "asset/theCity/theCity_taxi.png",
-                              height: MediaQuery.of(context).size.height / 5,
+                              "asset/theCity/theCity_bus.png",
+                              height: MediaQuery.of(context).size.height / 3.1,
                               fit: BoxFit.fill,
                               width: MediaQuery.of(context).size.width / 2.1,
                               alignment: Alignment.topLeft,
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 45),
-                    child: Column(
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: _launchURLCity,
-                          child: Image.asset(
-                            "asset/theCity/theCity_city.png",
-                            height: MediaQuery.of(context).size.height / 4,
-                            fit: BoxFit.fill,
-                            width: MediaQuery.of(context).size.width / 2.3,
-                            alignment: Alignment.topLeft,
-                          ),
-                        ),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 100),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SchoolMap()));
-                            },
-                            child: Image.asset(
-                              "asset/theCity/theCity_school.png",
-                              height: MediaQuery.of(context).size.height / 3.5,
-                              fit: BoxFit.fill,
-                              width: MediaQuery.of(context).size.width / 2.3,
-                              alignment: Alignment.topLeft,
+                              left: MediaQuery.of(context).size.width / 30),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.height / 45),
+                            child: GestureDetector(
+                              onTap: _launchURLTaxi,
+                              child: Image.asset(
+                                "asset/theCity/theCity_taxi.png",
+                                height: MediaQuery.of(context).size.height / 5,
+                                fit: BoxFit.fill,
+                                width: MediaQuery.of(context).size.width / 2.1,
+                                alignment: Alignment.topLeft,
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 45),
+                      child: Column(
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: _launchURLCity,
+                            child: Image.asset(
+                              "asset/theCity/theCity_city.png",
+                              height: MediaQuery.of(context).size.height / 4,
+                              fit: BoxFit.fill,
+                              width: MediaQuery.of(context).size.width / 2.3,
+                              alignment: Alignment.topLeft,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.height / 100),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => SchoolMap()));
+                              },
+                              child: Image.asset(
+                                "asset/theCity/theCity_school.png",
+                                height: MediaQuery.of(context).size.height / 3.5,
+                                fit: BoxFit.fill,
+                                width: MediaQuery.of(context).size.width / 2.3,
+                                alignment: Alignment.topLeft,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ))
         ],
       ),
